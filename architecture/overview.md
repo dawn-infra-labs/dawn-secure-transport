@@ -46,24 +46,13 @@ Routing decisions incorporate machine‑learned signals to evaluate risk, perfor
 
 Dawn Bridge Core consists of three major modules that work together to provide censorship‑resistant communication:
 
-+---------------------------+  
-|     Application Layer     |  
-+-------------+-------------+  
-              |  
-              v  
-+-------------+-------------+  
-|    AI‑Driven Routing      |  
-+-------------+-------------+  
-              |  
-              v  
-+-------------+-------------+  
-|   Pluggable Transports    |  
-+-------------+-------------+  
-              |  
-              v  
-+---------------------------+  
-|  Decentralized Discovery  |  
-+---------------------------+
+[ Application Layer ]
+          ↓
+[ AI‑Driven Routing ]
+          ↓
+[ Pluggable Transports ]
+          ↓
+[ Decentralized Discovery ]
 
 ### Data Flow Summary
 1. The application requests a connection.  
