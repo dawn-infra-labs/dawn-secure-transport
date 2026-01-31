@@ -18,3 +18,22 @@ All components are released under the **AGPLv3 license** to maximize transparenc
 - AI‑driven routing engine with multi‑hop support and per‑application routing decisions  
 - Secure handshake and key‑management primitives  
 - Designed for integration into VPNs, proxies, and decentralized communication systems
+
+---
+
+## 🧩 Architecture Overview
+
+Dawn Bridge Core is organized into three major modules:
+
+### A. Decentralized Node Discovery (DHT + DNS TXT)
+Implements a censorship‑resistant node distribution system using a structured DHT and DNS TXT records.  
+Supports remote configuration, policy delivery, node prioritization, and dynamic updates.
+
+### B. Pluggable Transport Framework
+A unified Rust framework implementing six state‑of‑the‑art circumvention transports with protocol camouflage, DPI evasion, and adaptive behavior.
+
+### C. AI‑Driven Routing Engine
+Optimizes path selection based on success rate, load, and censorship risk.  
+Supports multi‑hop routing and per‑application routing decisions for enhanced resilience.
+
+Detailed architecture documents are available in the `architecture/` directory.
