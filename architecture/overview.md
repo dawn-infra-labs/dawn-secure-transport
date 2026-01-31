@@ -10,10 +10,6 @@ Dawn Bridge Core addresses these limitations by separating the system into indep
 
 - Transport Framework — protocol agility and DPI‑resistant communication  
 - Node Discovery — decentralized, censorship‑resilient distribution of network endpoints  
-- AI‑Driven Routing — adaptive, risk‑aware path selection across
-
----
-
 - AI‑Driven Routing — adaptive, risk‑aware path selection across multiple hops  
 
 This architecture allows the system to evolve as censorship techniques change, while maintaining a consistent interface for applications built on top of it.
