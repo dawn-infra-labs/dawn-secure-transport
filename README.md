@@ -37,3 +37,41 @@ Optimizes path selection based on success rate, load, and censorship risk.
 Supports multi‑hop routing and per‑application routing decisions for enhanced resilience.
 
 Detailed architecture documents are available in the `architecture/` directory.
+
+---
+
+## 📁 Repository Structure
+
+```text
+dawn-bridge-core/
+│
+├── README.md
+│
+├── architecture/
+│   ├── overview.md
+│   ├── transport-architecture.md
+│   ├── node-discovery-architecture.md
+│   ├── ai-routing-architecture.md
+│   └── crypto-and-future-extensions.md
+│
+├── modules/
+│   ├── transport-framework/
+│   │   └── README.md
+│   ├── node-discovery/
+│   │   └── README.md
+│   └── ai-routing/
+│       └── README.md
+│
+├── roadmap/
+│   ├── milestones.md
+│   ├── deliverables.md
+│   └── timeline.md
+│
+├── crates/
+├── docs/
+├── examples/
+├── scripts/
+│
+├── PROTOCOLS.md
+├── LICENSE
+└── Cargo.toml
