@@ -84,12 +84,17 @@ The transport layer provides protocol agility and obfuscation. It is built aroun
 All transports implement a common API, enabling seamless switching and fallback.
 
 ### Supported Transport Types
-- TLS‑based camouflage  
-- WebSocket / HTTP3 tunneling  
-- Domain‑fronted channels  
-- Noise‑based encrypted tunnels  
-- QUIC‑based transports  
-- Future PQC‑ready transports  
+Dawn Bridge Core currently supports six primary transport protocols, with future‑proofing for post‑quantum cryptography:
+
+- **XHTTP** — lightweight, censorship‑resilient HTTP‑based transport  
+- **XTLS** — encrypted transport with advanced fingerprint resistance  
+- **Reality** — modern obfuscation layer designed for active probing resistance  
+- **VLESS** — flexible, metadata‑minimal transport for multi‑hop routing  
+- **Hysteria2** — high‑performance QUIC‑based transport optimized for unstable networks  
+- **Trojan** — TLS‑camouflaged transport designed to blend with normal HTTPS traffic  
+
+### PQC‑Ready Transports
+- **PQC‑ready extensions** — future support for post‑quantum key exchange and hybrid cryptographic handshakes
 
 ### Obfuscation Layers
 Transports can apply additional obfuscation such as:
