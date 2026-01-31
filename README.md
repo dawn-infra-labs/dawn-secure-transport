@@ -101,3 +101,71 @@ The architecture emphasizes:
 - Minimal metadata exposure  
 
 A full threat model is documented in `architecture/overview.md`.
+
+---
+
+## 🚀 Roadmap
+
+### Phase 1 — Core Architecture (MVP)
+- Modular workspace  
+- Transport stubs  
+- Basic DHT discovery  
+- Secure primitives  
+
+### Phase 2 — Distributed Node Network
+- Multi‑source discovery  
+- Remote policy delivery  
+- Automatic node updates  
+
+### Phase 3 — AI Routing Engine
+- Multi‑hop routing  
+- Risk‑aware path selection  
+- Per‑application routing  
+
+### Phase 4 — Future Extensions
+- Post‑quantum cryptography (PQC) integration  
+- Additional censorship‑resistant transport protocols  
+
+Full details are in the `roadmap/` directory.
+
+---
+
+## 🔮 Future Extensions
+
+Due to current time and budget constraints, this phase does not include post‑quantum cryptography (PQC).  
+The architecture is designed with modular cryptographic interfaces, allowing PQC algorithms to be added in future phases without breaking compatibility.
+
+Similarly, the transport framework is intentionally pluggable, enabling additional censorship‑resistant protocols to be integrated as they emerge.
+
+These extensions will be added in future development cycles under the same AGPLv3 license.
+
+---
+
+## 📜 License
+
+This project is licensed under **AGPLv3**.  
+All modules developed in this repository will remain open and reusable for the circumvention ecosystem.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome.  
+A `CONTRIBUTING.md` file will be added in a future update.
+
+---
+
+## 🌐 Why This Matters
+
+Modern censorship systems increasingly rely on:
+
+- IP + SNI blocking  
+- TLS fingerprinting  
+- Active probing  
+- Traffic classification  
+- Protocol‑level heuristics  
+
+Dawn Bridge Core provides a **flexible, modular, and future‑proof foundation** for building tools that can adapt to evolving adversarial environments.
+
+It is not a VPN or a product by itself —  
+it is **infrastructure** for the next generation of censorship‑resistant systems.
