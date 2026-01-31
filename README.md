@@ -75,3 +75,26 @@ dawn-bridge-core/
 ├── PROTOCOLS.md
 ├── LICENSE
 └── Cargo.toml
+
+---
+
+## 🔒 Security & Threat Model
+
+Dawn Bridge Core is designed for adversarial environments involving:
+
+- IP blocking  
+- Protocol fingerprinting  
+- Active probing  
+- Traffic analysis  
+- Selective throttling  
+- Metadata inspection  
+
+The architecture emphasizes:
+
+- Protocol agility  
+- Transport obfuscation  
+- Decentralized discovery  
+- Multi‑hop routing  
+- Minimal metadata exposure  
+
+A full threat model is documented in `architecture/overview.md`.
