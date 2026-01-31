@@ -75,6 +75,7 @@ dawn-bridge-core/
   PROTOCOLS.md
   LICENSE
   Cargo.toml
+
 ---
 
 ## 🔒 Security & Threat Model
