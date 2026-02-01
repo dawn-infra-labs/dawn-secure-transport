@@ -40,11 +40,11 @@ Discovery queries should not reveal sensitive information about the client.
 High‑level flow:
 
 ┌─ Client ─┐  
-     ↓  
+             ↓  
 ┌─ Discovery Engine ─┐  
-     ↓  
+             ↓  
 ┌─ DHT / DNS TXT / Remote Policies ─┐  
-     ↓  
+             ↓  
 ┌─ Ranked Node List ─┐  
 
 The discovery engine aggregates data from multiple sources, validates it, and produces a prioritized list of nodes for the routing engine.
