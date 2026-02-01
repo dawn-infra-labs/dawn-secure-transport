@@ -47,31 +47,22 @@ New transports can be added without modifying existing ones.
 
 ## 3. Unified Transport Interface
 
-All transports implement the following conceptual interface:
-Transport {
-    init(config)
-    open_connection(target)
-    send(data)
-    receive()
-    close()
-    get_metrics() → {
-        latency
-        jitter
-        throughput
-        error_rate
-    }
-}
+All transports implement the following conceptual interface.  
+The code block uses indentation to ensure stable rendering on mobile:
 
-`
-Transport {
-    init(config)
-    open_connection(target)
-    send(data)
-    receive()
-    close()
-    getmetrics() → latency, jitter, throughput, errorrate
-}
-`
+    Transport {
+        init(config)
+        open_connection(target)
+        send(data)
+        receive()
+        close()
+        get_metrics() {
+            latency
+            jitter
+            throughput
+            error_rate
+        }
+    }
 
 The routing engine interacts with transports only through this interface, enabling:
 
