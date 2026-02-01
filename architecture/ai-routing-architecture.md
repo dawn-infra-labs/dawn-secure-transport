@@ -1,12 +1,8 @@
-```markdown
 # AI Routing Architecture
 
 ## 1. Overview
 
-The AI routing subsystem selects optimal paths across multiple nodes under censorship, congestion, and dynamic network conditions.  
-It evaluates transport performance, regional blocking patterns, and policy constraints to produce stable and efficient routes.
-
-The routing engine operates continuously and adapts to real‑time conditions using lightweight scoring models.
+The AI routing subsystem selects optimal paths across multiple nodes under censorship, congestion, and dynamic network conditions. It evaluates transport performance, regional blocking patterns, and policy constraints to produce stable and efficient routes. The routing engine operates continuously and adapts to real‑time conditions using lightweight scoring models.
 
 ---
 
@@ -19,8 +15,7 @@ Routing decisions must adjust to changing network conditions and feedback from l
 Routes must remain functional even when individual nodes degrade, fail, or become unreachable.
 
 ### Transport Awareness
-Different transports behave differently under censorship and congestion.  
-The routing engine must understand their characteristics and trade‑offs.
+Different transports behave differently under censorship and congestion. The routing engine must understand their characteristics and trade‑offs.
 
 ### Minimal Overhead
 Routing logic must remain lightweight and efficient, avoiding heavy computation on constrained clients.
@@ -59,14 +54,11 @@ availability
 risk_score  
 region  
 
-This information is used as input to the scoring model.
-
 ---
 
 ## 5. Transport Evaluation
 
-Each transport type has unique behavior under censorship and load.  
-The routing engine evaluates transports along several dimensions:
+Each transport type has unique behavior under censorship and load. The routing engine evaluates transports along several dimensions:
 
 - Latency  
 - Jitter  
@@ -98,14 +90,9 @@ throughput very_high
 failure_rate medium  
 censorship_resistance medium  
 
-These metrics are combined with policy preferences to determine which transports are preferred in a given environment.
-
 ---
 
 ## 6. Scoring Model
-
-The scoring model assigns a final score to each node and transport combination.  
-It is designed to be simple enough to run on clients while still capturing key trade‑offs.
 
 Inputs include:
 
@@ -127,17 +114,15 @@ policy_score 0.95
 history_score 0.87  
 final_score 0.88  
 
-Nodes with higher final scores are prioritized when building routes.
-
 ---
 
 ## 7. Route Selection
 
 The routing engine can select:
 
-- Single‑hop routes (direct to one node)  
-- Multi‑hop routes (chained through several nodes)  
-- Transport fallback sequences for resilience  
+- Single‑hop routes  
+- Multi‑hop routes  
+- Transport fallback sequences  
 
 Example route output:
 
@@ -146,8 +131,6 @@ hop1 node_a xtls
 hop2 node_b reality  
 hop3 node_c hysteria2  
 final_score 0.91  
-
-The engine may also maintain multiple candidate routes and switch between them when conditions change.
 
 ---
 
@@ -173,8 +156,6 @@ new_latency 120ms
 action reroute  
 reason performance_degradation  
 
-This allows the system to react quickly to censorship actions or network congestion.
-
 ---
 
 ## 9. Security Considerations
@@ -189,23 +170,14 @@ This allows the system to react quickly to censorship actions or network congest
 
 ### Mitigations
 
-- Signature verification for node metadata and policies  
-- Multi‑source validation of discovery data  
-- Randomized route selection within a safe score range  
-- Transport obfuscation and protocol camouflage  
-- Periodic re‑evaluation of routes and transports  
+- Signature verification  
+- Multi‑source validation  
+- Randomized route selection  
+- Transport obfuscation  
+- Periodic re‑evaluation  
 
 ---
 
 ## 10. Summary
 
-The AI routing subsystem provides adaptive, censorship‑resistant path selection across heterogeneous transports and nodes.  
-By combining transport evaluation, scoring models, and continuous monitoring, it ensures:
-
-- High reliability under changing conditions  
-- Strong censorship resistance  
-- Efficient performance  
-- Dynamic adaptation to network and policy shifts  
-
-This routing layer works together with discovery and transport modules to maintain stable connectivity in adversarial environments.
-```
+The AI routing subsystem provides adaptive, censorship‑resistant path selection across heterogeneous transports and nodes. By combining transport evaluation, scoring models, and continuous monitoring, it ensures high reliability, strong censorship resistance, efficient performance, and dynamic adaptation.
