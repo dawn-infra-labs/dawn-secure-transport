@@ -1,4 +1,4 @@
-Client
--> Discovery Engine
--> DHT DNS TXT Policies
--> Ranked Node List
+client
+    -> discovery engine
+    -> dht dns txt policies
+    -> ranked node list
