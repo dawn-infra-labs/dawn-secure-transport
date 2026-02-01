@@ -48,6 +48,7 @@ New transports can be added without modifying existing ones.
 ## 3. Unified Transport Interface
 
 All transports implement the following conceptual interface:
+
 `
 Transport {
     init(config)
@@ -55,14 +56,10 @@ Transport {
     send(data)
     receive()
     close()
-    get_metrics() → {
-        latency
-        jitter
-        throughput
-        error_rate
-    }
+    getmetrics() → latency, jitter, throughput, errorrate
 }
 `
+
 The routing engine interacts with transports only through this interface, enabling:
 
 - Multi‑hop routing  
