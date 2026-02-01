@@ -48,6 +48,19 @@ New transports can be added without modifying existing ones.
 ## 3. Unified Transport Interface
 
 All transports implement the following conceptual interface:
+Transport {
+    init(config)
+    open_connection(target)
+    send(data)
+    receive()
+    close()
+    get_metrics() → {
+        latency
+        jitter
+        throughput
+        error_rate
+    }
+}
 
 `
 Transport {
