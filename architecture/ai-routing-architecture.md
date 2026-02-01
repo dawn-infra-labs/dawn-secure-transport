@@ -1,3 +1,4 @@
+```markdown
 # AI Routing Architecture
 
 ## 1. Overview
@@ -67,12 +68,12 @@ This information is used as input to the scoring model.
 Each transport type has unique behavior under censorship and load.  
 The routing engine evaluates transports along several dimensions:
 
-- Latency
-- Jitter
-- Throughput
-- Failure rate
-- Censorship resistance
-- Handshake robustness
+- Latency  
+- Jitter  
+- Throughput  
+- Failure rate  
+- Censorship resistance  
+- Handshake robustness  
 
 Example transport metrics:
 
@@ -108,12 +109,12 @@ It is designed to be simple enough to run on clients while still capturing key t
 
 Inputs include:
 
-- Latency score
-- Stability score
-- Transport preference score
-- Regional risk score
-- Policy hints
-- Historical performance trends
+- Latency score  
+- Stability score  
+- Transport preference score  
+- Regional risk score  
+- Policy hints  
+- Historical performance trends  
 
 Example scoring structure:
 
@@ -134,9 +135,9 @@ Nodes with higher final scores are prioritized when building routes.
 
 The routing engine can select:
 
-- Single‑hop routes (direct to one node)
-- Multi‑hop routes (chained through several nodes)
-- Transport fallback sequences for resilience
+- Single‑hop routes (direct to one node)  
+- Multi‑hop routes (chained through several nodes)  
+- Transport fallback sequences for resilience  
 
 Example route output:
 
@@ -154,12 +155,12 @@ The engine may also maintain multiple candidate routes and switch between them w
 
 The routing engine continuously monitors:
 
-- Latency changes
-- Packet loss
-- Node failures
-- Transport degradation
-- Regional blocking events
-- Policy updates
+- Latency changes  
+- Packet loss  
+- Node failures  
+- Transport degradation  
+- Regional blocking events  
+- Policy updates  
 
 When conditions change beyond defined thresholds, the engine recalculates scores and updates the active route.
 
@@ -180,19 +181,19 @@ This allows the system to react quickly to censorship actions or network congest
 
 ### Threats
 
-- Route poisoning
-- Fake node injection
-- Timing correlation attacks
-- Transport fingerprinting
-- Policy manipulation
+- Route poisoning  
+- Fake node injection  
+- Timing correlation attacks  
+- Transport fingerprinting  
+- Policy manipulation  
 
 ### Mitigations
 
-- Signature verification for node metadata and policies
-- Multi‑source validation of discovery data
-- Randomized route selection within a safe score range
-- Transport obfuscation and protocol camouflage
-- Periodic re‑evaluation of routes and transports
+- Signature verification for node metadata and policies  
+- Multi‑source validation of discovery data  
+- Randomized route selection within a safe score range  
+- Transport obfuscation and protocol camouflage  
+- Periodic re‑evaluation of routes and transports  
 
 ---
 
@@ -207,3 +208,4 @@ By combining transport evaluation, scoring models, and continuous monitoring, it
 - Dynamic adaptation to network and policy shifts  
 
 This routing layer works together with discovery and transport modules to maintain stable connectivity in adversarial environments.
+```
