@@ -71,6 +71,8 @@ The routing engine interacts with transports only through this interface, enabli
 - Performance‑aware selection  
 - Risk‑aware selection  
 
+The complete end‑to‑end handshake and packet flow are described in `data-flow.md`.
+
 ---
 
 ## 4. Supported Transports
