@@ -16,6 +16,8 @@ This architecture allows the system to evolve as censorship techniques change, w
 
 The goal of this document is to provide a high‑level understanding of how these modules interact, the principles guiding their design, and the threat model that shapes the system’s behavior.
 
+---
+
 ## 2. Design Principles
 
 Dawn Bridge Core is built on several architectural principles that ensure long‑term resilience and extensibility:
@@ -38,28 +40,60 @@ No single protocol is relied upon. The system can switch transports, blend behav
 ### AI‑Assisted Routing
 Routing decisions incorporate machine‑learned signals to evaluate risk, performance, and censorship pressure, enabling adaptive multi‑hop paths.
 
+---
+
 ## 3. System Architecture Overview
 
-Dawn Bridge Core consists of three major modules that work together to provide censorship‑resistant communication:
+Dawn Bridge Core is organized into a set of modular subsystems that work together to provide censorship‑resistant, adaptable, and secure communication.  
+Each subsystem is independently replaceable, yet all are connected through a unified architectural flow that spans discovery, transport, routing, and security.
 
- ```
- Application Layer 
-          ↓  
- AI‑Driven Routing 
-          ↓  
- Pluggable Transports 
-          ↓  
- Decentralized Discovery  
+At a high level, the system can be viewed as a layered pipeline:
 
-```
+    Application Layer
+            ↓
+    AI‑Driven Routing
+            ↓
+    Pluggable Transports
+            ↓
+    Decentralized Discovery
+            ↓
+    Security Foundations (Threat Model & Data Flow)
 
-### Data Flow Summary
+These layers collectively define how nodes are found, how paths are selected, how traffic is carried, and how the system behaves under adversarial conditions.
+
+### 3.1 Core Architectural Modules
+
+Dawn Bridge Core is built around three primary modules:
+
+- **Decentralized Node Discovery** — Provides censorship‑resilient distribution of node information using DHT, DNS TXT, and remote policy channels.  
+- **Pluggable Transport Framework** — Supplies protocol agility, obfuscation, and DPI‑resistant communication across multiple transport types.  
+- **AI‑Driven Routing Engine** — Selects multi‑hop paths using machine‑learned risk signals, performance metrics, and adaptive heuristics.
+
+These modules form the operational backbone of the system.
+
+### 3.2 Supporting Architectural Documents
+
+Two additional architectural documents define the system’s security boundaries and end‑to‑end operational behavior:
+
+- **Threat Model** — Describes adversaries, attack surfaces, and mitigation strategies across transports, routing, and discovery. It defines the assumptions that guide the design of all modules.  
+- **Data Flow Architecture** — Explains the complete lifecycle of a connection, including handshake sequencing, hybrid key exchange, onion encryption, multi‑hop forwarding, response paths, and session rotation.
+
+Together, these documents clarify why the architecture is structured the way it is and how data moves through the system under real‑world adversarial pressure.
+
+### 3.3 Data Flow Summary
+
+The interaction between modules follows a consistent end‑to‑end flow:
+
 1. The application requests a connection.  
 2. The routing engine selects a multi‑hop path based on risk and performance.  
 3. The transport layer establishes obfuscated, DPI‑resistant channels.  
 4. The discovery module provides updated node information and policies.  
+5. The data‑flow layer defines how packets move through the selected path.  
+6. The threat model defines the adversarial assumptions that shape each step.
 
-Each module is independently replaceable, enabling long‑term adaptability.
+This layered design ensures that each subsystem can evolve independently while maintaining a coherent operational pipeline.
+
+---
 
 ## 4. Module A — Decentralized Node Discovery
 
@@ -78,6 +112,8 @@ Nodes can receive updated routing policies, risk scores, and transport preferenc
 The system ranks nodes based on availability, risk, performance, and historical reliability.
 
 This module ensures that clients can always obtain fresh, censorship‑resilient node lists.
+
+---
 
 ## 5. Module B — Pluggable Transport Framework
 
@@ -113,6 +149,8 @@ The system can dynamically switch transports based on:
 - Routing decisions  
 - AI‑generated risk signals  
 
+---
+
 ## 6. Module C — AI‑Driven Routing Engine
 
 The routing engine selects multi‑hop paths using machine‑learned signals and adaptive heuristics.
@@ -147,6 +185,8 @@ Routing decisions evolve over time as the model learns from:
 - Node churn  
 - Censorship escalation  
 
+---
+
 ## 7. Security Model
 
 Dawn Bridge Core assumes a powerful adversary capable of:
@@ -168,6 +208,8 @@ Dawn Bridge Core assumes a powerful adversary capable of:
 
 The system does not guarantee anonymity by itself but provides a foundation for censorship‑resistant communication.
 
+---
+
 ## 8. Extensibility & Future Work
 
 The architecture is designed for long‑term evolution. Planned extensions include:
@@ -183,6 +225,8 @@ More advanced ML models for risk prediction and censorship detection.
 
 ### Enhanced Discovery Mechanisms
 Additional decentralized channels for distributing node information.
+
+---
 
 ## 9. Summary
 
