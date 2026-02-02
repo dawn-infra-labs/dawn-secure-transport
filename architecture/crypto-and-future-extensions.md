@@ -10,34 +10,34 @@ The goal is to ensure that Dawn Bridge remains secure, adaptable, and future-pro
 
 Dawn Bridge Core follows four core principles:
 
-1. Forward Secrecy (FS)  
+1. **Forward Secrecy (FS)**  
    Every session uses ephemeral keys. Compromise of long-term keys does not reveal past traffic.
 
-2. Post-Quantum Readiness (PQR)  
+2. **Post-Quantum Readiness (PQR)**  
    The system is designed to adopt PQC algorithms without redesigning the transport layer.
 
-3. Modular Cryptographic Layers  
-   Each transport protocol (XHTTP, XTLS, Reality, VLESS, Hysteria2, Trojan) defines its own crypto envelope, but all follow a unified abstraction.
+3. **Modular Cryptographic Layers**  
+   Each transport protocol (`XHTTP`, `XTLS`, `Reality`, `VLESS`, `Hysteria2`, `Trojan`) defines its own crypto envelope, but all follow a unified abstraction.
 
-4. Graceful Upgrade Path  
+4. **Graceful Upgrade Path**  
    New algorithms can be introduced without breaking compatibility with older clients.
 
 ---
 
 ## 2. Hybrid Key Exchange Model
 
-Dawn Bridge uses a hybrid key exchange strategy to ensure security against both classical and quantum adversaries.
+Dawn Bridge uses a **hybrid key exchange** strategy to ensure security against both classical and quantum adversaries.
 
 ### 2.1 Classical + PQC Hybrid
 
 The system supports combining:
 
-- X25519 (classical ECDH)
-- Kyber (PQC KEM)
+- `X25519` (classical ECDH)  
+- `Kyber` (PQC KEM)
 
 into a single shared secret:
 
-shared_secret = KDF( x25519_secret || kyber_secret )
+`shared_secret = KDF( x25519_secret || kyber_secret )`
 
 This ensures:
 
@@ -47,10 +47,10 @@ This ensures:
 
 ### 2.2 Negotiation Flow
 
-Client → Server: supported_kex = [x25519, kyber]  
-Server → Client: chosen_kex = hybrid(x25519 + kyber)  
-Both sides → derive ephemeral keys  
-Both sides → compute shared_secret
+- Client → Server: `supported_kex = [x25519, kyber]`  
+- Server → Client: `chosen_kex = hybrid(x25519 + kyber)`  
+- Both sides derive ephemeral keys  
+- Both sides compute `shared_secret`
 
 This negotiation is transport-agnostic and works across all six protocols.
 
@@ -60,16 +60,16 @@ This negotiation is transport-agnostic and works across all six protocols.
 
 Each protocol integrates crypto differently, but all follow the same abstraction:
 
-TransportCrypto {  
-    handshake: function(...)  
-    derive_keys: function(...)  
-    encrypt: function(...)  
-    decrypt: function(...)  
-    rotate_keys: function(...)  
-}
+    TransportCrypto {
+        handshake: function(...)
+        derive_keys: function(...)
+        encrypt: function(...)
+        decrypt: function(...)
+        rotate_keys: function(...)
+    }
 
 ### 3.1 XHTTP  
-Uses hybrid KEX + AEAD (ChaCha20-Poly1305 or AES-GCM).
+Uses hybrid KEX + AEAD (`ChaCha20-Poly1305` or `AES-GCM`).
 
 ### 3.2 XTLS  
 Leverages TLS 1.3 handshake with PQC extension support.
@@ -92,9 +92,9 @@ TLS-based crypto with PQC extension path.
 
 Dawn Bridge enforces continuous key rotation to minimize exposure:
 
-rotation_interval = 30 minutes  
-or  
-rotation_trigger = traffic_volume > threshold
+- `rotation_interval = 30 minutes`  
+- or  
+- `rotation_trigger = traffic_volume > threshold`
 
 Rotation is transparent to the transport layer and does not interrupt sessions.
 
@@ -123,26 +123,26 @@ The architecture supports adding new protocols without redesigning the system.
 
 ### 6.1 Extension Mechanism
 
-ProtocolExtension {  
-    id: string  
-    version: int  
-    handshake: function(...)  
-    crypto_profile: enum(...)  
-    routing_behavior: enum(...)  
-}
+    ProtocolExtension {
+        id: string
+        version: int
+        handshake: function(...)
+        crypto_profile: enum(...)
+        routing_behavior: enum(...)
+    }
 
 ### 6.2 Example Future Extensions
 
-- XHTTP/2 — optimized for low-power devices  
-- Reality-Lite — minimal handshake for IoT  
-- PQC-Only Transport — no classical crypto fallback  
-- Steganographic Transport — traffic disguised as benign flows  
+- `XHTTP/2` — optimized for low-power devices  
+- `Reality-Lite` — minimal handshake for IoT  
+- `PQC-Only Transport` — no classical crypto fallback  
+- `Steganographic Transport` — traffic disguised as benign flows  
 
 ---
 
 ## 7. Cryptographic Agility
 
-Dawn Bridge Core supports algorithm agility, meaning:
+Dawn Bridge Core supports **algorithm agility**, meaning:
 
 - Algorithms can be replaced  
 - Key sizes can be increased  
@@ -153,10 +153,10 @@ without breaking compatibility.
 
 ### 7.1 Agility Table
 
-KEX: x25519, kyber, hybrid(x25519+kyber)  
-Cipher: chacha20-poly1305, aes-gcm  
-Hash: sha256, sha3-256, blake3  
-Signature: ed25519, dilithium
+- KEX: `x25519`, `kyber`, `hybrid(x25519+kyber)`  
+- Cipher: `chacha20-poly1305`, `aes-gcm`  
+- Hash: `sha256`, `sha3-256`, `blake3`  
+- Signature: `ed25519`, `dilithium`
 
 ---
 
