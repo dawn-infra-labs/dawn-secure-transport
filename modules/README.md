@@ -16,6 +16,7 @@ The modules in this directory are designed to:
 - ensure each subsystem can evolve independently  
 - support modular testing and incremental development  
 - align with the threat model and data‑flow architecture  
+- enable intelligent, censorship‑resistant behavior across the system  
 
 Each module corresponds directly to a major architectural component defined in the `architecture/` directory.
 
@@ -48,6 +49,13 @@ Defines handshake flows, encryption boundaries, behavioral simulation, and proto
 
 This module enables the system to support multiple transports—xHTTP, XTLS, Hysteria2, VLESS, Reality, and Trojan—under a single coherent design.
 
+It ensures:
+
+- consistent lifecycle management  
+- shared cryptographic primitives  
+- protocol camouflage and DPI evasion  
+- extensibility for future transports  
+
 ---
 
 ### 2. Node Discovery
@@ -59,8 +67,9 @@ Provides mechanisms for:
 - policy delivery  
 - dynamic updates  
 - prioritization and filtering  
+- fallback strategies in adversarial environments  
 
-This module ensures the system can operate without centralized infrastructure.
+This module ensures the system can operate without centralized infrastructure and can adapt to censorship pressure.
 
 ---
 
@@ -70,9 +79,13 @@ Implements the intelligent routing engine responsible for:
 - multi‑hop path selection  
 - risk‑aware decision making  
 - performance‑based adaptation  
-- per‑application routing policies  
+- transport protocol selection  
+- per‑application routing policies（自动判断哪些 App 需要代理）  
+- dynamic fallback and retry strategies  
 
 This module integrates with both the transport framework and node discovery to optimize resilience in adversarial environments.
+
+It is the system’s decision‑making layer, enabling adaptive, censorship‑resistant behavior.
 
 ---
 
@@ -85,6 +98,7 @@ All modules follow these principles:
 - **Security** — boundaries align with the threat model and minimize metadata exposure  
 - **Testability** — modules can be tested independently  
 - **Interoperability** — modules communicate through stable, well‑defined interfaces  
+- **Resilience** — modules are designed for adversarial network environments  
 
 ---
 
@@ -108,5 +122,7 @@ Future development may introduce additional modules, such as:
 - remote configuration service  
 - telemetry and adaptive feedback  
 - PQC‑ready cryptographic extensions  
+- collaborative routing intelligence  
+- advanced anomaly detection  
 
 The current structure is intentionally designed to accommodate these expansions.
