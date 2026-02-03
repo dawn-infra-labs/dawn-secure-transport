@@ -106,7 +106,7 @@ It integrates with the node discovery system to obtain fresh node lists and perf
 
 ---
 
-## Per‑Application Routing (核心能力)
+## Per‑Application Routing
 
 The AI Routing Engine automatically determines **which applications should use the proxy and which should not**.
 
