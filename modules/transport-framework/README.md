@@ -73,7 +73,7 @@ transport-framework/
 
 ---
 
-## Core Interfaces (English‑only code block)
+## Core Interfaces
 
 Below is the core trait implemented by all transport protocols:
 
