@@ -80,7 +80,7 @@ Implements the intelligent routing engine responsible for:
 - risk‑aware decision making  
 - performance‑based adaptation  
 - transport protocol selection  
-- per‑application routing policies（自动判断哪些 App 需要代理）  
+- per‑application routing policies
 - dynamic fallback and retry strategies  
 
 This module integrates with both the transport framework and node discovery to optimize resilience in adversarial environments.
