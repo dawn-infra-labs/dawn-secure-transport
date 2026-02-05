@@ -73,6 +73,7 @@ dawn-bridge-core/
 ├── docs/
 ├── examples/
 ├── scripts/
+├── tests/
 │
 ├── PROTOCOLS.md
 ├── LICENSE
