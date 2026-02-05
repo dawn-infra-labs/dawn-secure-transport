@@ -1,0 +1,10 @@
+# Dawn Bridge Core Code Owners
+
+/crates/core/       @folk307
+/crates/transport/  @folk307
+/crates/discovery/  @folk307
+/crates/routing/    @folk307
+
+/docs/              @folk307
+/modules/           @folk307
+/architecture/      @folk307
