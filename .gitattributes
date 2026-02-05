@@ -1,14 +1,17 @@
-# Ignore shell scripts from language statistics
-*.sh linguist-vendored
+# Normalize line endings for all text files
+* text=auto eol=lf
 
-# Ignore markdown documentation
-*.md linguist-documentation
+# Treat Rust files as text
+*.rs text
 
-# Ignore CI and config files
-*.yml linguist-vendored
-*.yaml linguist-vendored
-*.toml linguist-vendored
+# Ensure Markdown files use LF
+*.md text eol=lf
 
-# Ignore license and changelog
-LICENSE linguist-documentation
-CHANGELOG.md linguist-documentation
+# Ensure shell scripts use LF
+*.sh text eol=lf
+
+# Prevent GitHub from misclassifying vendored code
+vendor/** linguist-vendored=true
+
+# Exclude generated files from language statistics
+*.lock linguist-generated=true
