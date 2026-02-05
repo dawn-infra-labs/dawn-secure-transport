@@ -1,22 +1,22 @@
-name: Rust CI
+name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
       - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
+        uses: dtolnay/rust-toolchain@stable
+
       - name: Build workspace
-        run: cargo build --workspace --verbose
+        run: cargo build --workspace --all-targets
+
       - name: Run tests
-        run: cargo test --workspace --verbose
+        run: cargo test --workspace --all-targets
