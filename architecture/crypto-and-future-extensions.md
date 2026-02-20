@@ -68,6 +68,7 @@ Each protocol integrates crypto differently, but all follow the same abstraction
         rotate_keys: function(...)
     }
 
+
 ### 3.1 REALITY  
 Uses deterministic key derivation + hybrid KEX.
 
