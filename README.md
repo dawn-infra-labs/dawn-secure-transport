@@ -12,7 +12,7 @@ All components are released under the AGPLv3 license to maximize transparency, e
 ## ✨ Key Capabilities
 
 - Modular Rust workspace with cleanly separated crates  
-- Six advanced censorship‑resistant transport protocols (xHTTP, XTLS, Hysteria2, VLESS, Reality, Trojan)  
+- Six advanced censorship‑resistant transport protocols (REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5)  
 - Traffic obfuscation and DPI evasion (TLS fingerprint spoofing, behavioral simulation, dynamic port rotation)  
 - Decentralized node discovery using DHT + DNS TXT  
 - AI‑driven routing engine with multi‑hop support and per‑application routing decisions  
@@ -30,7 +30,16 @@ Implements a censorship‑resistant node distribution system using a structured 
 Supports remote configuration, policy delivery, node prioritization, and dynamic updates.
 
 ### B. Pluggable Transport Framework
-A unified Rust framework implementing six state‑of‑the‑art circumvention transports with protocol camouflage, DPI evasion, and adaptive behavior.
+A unified Rust framework implementing six modern circumvention transports:
+
+- REALITY  
+- uTLS  
+- XTLS‑Vision  
+- XHTTP (Stream / Packet)  
+- VLESS  
+- TUIC v5  
+
+These transports support multiple network environments and censorship conditions.
 
 ### C. AI‑Driven Routing Engine
 Optimizes path selection based on success rate, load, and censorship risk.  
@@ -42,7 +51,6 @@ Detailed architecture documents are available in the `architecture/` directory, 
 
 ## 📁 Repository Structure
 
-```
 dawn-bridge-core/
 │
 ├── README.md
@@ -79,7 +87,6 @@ dawn-bridge-core/
 ├── LICENSE
 └── Cargo.toml
 
-```
 ---
 
 ## 🔒 Security & Threat Model
