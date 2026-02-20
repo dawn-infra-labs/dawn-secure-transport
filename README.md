@@ -52,7 +52,6 @@ Detailed architecture documents are available in the `architecture/` directory, 
 ## 📁 Repository Structure
 
 ```
-
 dawn-bridge-core/
 │
 ├── README.md
@@ -88,6 +87,8 @@ dawn-bridge-core/
 ├── PROTOCOLS.md
 ├── LICENSE
 └── Cargo.toml
+
+```
 
 ---
 
