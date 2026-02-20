@@ -68,19 +68,31 @@ Each protocol integrates crypto differently, but all follow the same abstraction
         rotate_keys: function(...)
     }
 
-### 3.1 XHTTP  
-Uses hybrid KEX + AEAD (`ChaCha20-Poly1305` or `AES-GCM`).
-
-### 3.2 XTLS‑Vision  
-Leverages TLS 1.3 handshake with PQC extension support.
-
-### 3.3 REALITY  
+### 3.1 REALITY  
 Uses deterministic key derivation + hybrid KEX.
 
-### 3.4 VLESS  
+### 3.2 uTLS  
+Acts as a TLS fingerprint adaptation layer that wraps or configures underlying transports to mimic real-world client behavior.
+
+It does not define its own encryption scheme; instead, it:
+
+- adjusts ClientHello parameters  
+- controls cipher suite ordering  
+- tunes TLS extensions  
+- aligns JA3/JA4 fingerprints with popular clients  
+
+uTLS integrates with `XHTTP`, `XTLS‑Vision`, and `REALITY` to reduce detectability while reusing their existing crypto envelopes.
+
+### 3.3 XTLS‑Vision  
+Leverages TLS 1.3 handshake with PQC extension support.
+
+### 3.4 XHTTP  
+Uses hybrid KEX + AEAD (`ChaCha20-Poly1305` or `AES-GCM`).
+
+### 3.5 VLESS  
 Lightweight handshake with optional PQC upgrade.
 
-### 3.5 TUIC v5  
+### 3.6 TUIC v5  
 QUIC-based crypto with PQC-ready handshake.
 
 ---
