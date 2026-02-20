@@ -13,12 +13,12 @@ Dawn Bridge Core supports a **multi‑transport strategy** to maximize censorshi
 
 Supported protocols:
 
-- Reality  
-- xHTTP  
-- XTLS  
+- REALITY  
+- uTLS  
+- XTLS‑Vision  
+- XHTTP  
 - VLESS  
-- Hysteria2  
-- Trojan  
+- TUIC v5  
 
 Each protocol is integrated through the **Unified Transport Framework**, ensuring consistent behavior, shared abstractions, and AI‑driven selection.
 
@@ -26,25 +26,23 @@ Each protocol is integrated through the **Unified Transport Framework**, ensurin
 
 # 2. Protocol Comparison Table
 
-```text
-Protocol     | Type            | Strengths                          | Weaknesses
--------------|-----------------|-------------------------------------|------------------------------
-Reality      | TLS mimicry     | indistinguishable from HTTPS        | complex config
-xHTTP        | HTTP obfuscation| blends into normal web traffic      | moderate overhead
-XTLS         | TLS acceleration| high performance, low overhead      | fingerprintable if misused
-VLESS        | lightweight     | simple, flexible, low metadata      | requires obfuscation layer
-Hysteria2    | QUIC-based      | high-speed, anti-throttling         | QUIC is increasingly targeted
-Trojan       | TLS camouflage  | strong mimicry, simple handshake    | SNI-based blocking possible
-```
+    Protocol     | Type                | Strengths                          | Weaknesses
+    -------------|---------------------|-------------------------------------|------------------------------
+    REALITY      | TLS mimicry         | indistinguishable from HTTPS        | complex config
+    uTLS         | TLS fingerprinting  | Chrome‑like handshake behavior      | requires careful tuning
+    XTLS‑Vision  | TCP obfuscation     | high performance, low overhead      | fingerprintable if misused
+    XHTTP        | HTTP/3 camouflage   | blends into normal web traffic      | moderate overhead
+    VLESS        | lightweight         | simple, flexible, low metadata      | requires obfuscation layer
+    TUIC v5      | QUIC‑based          | high‑speed, anti‑throttling         | QUIC is increasingly targeted
 
 ---
 
 # 3. Protocol Details
 
-## 3.1 Reality
+## 3.1 REALITY
 
 ### Description
-Reality is a TLS‑based protocol designed to be **cryptographically indistinguishable from real HTTPS traffic**.
+REALITY is a TLS‑based protocol designed to be **cryptographically indistinguishable from real HTTPS traffic**.
 
 ### Strengths
 - excellent mimicry  
@@ -61,35 +59,35 @@ Reality is a TLS‑based protocol designed to be **cryptographically indistingui
 
 ---
 
-## 3.2 xHTTP
+## 3.2 uTLS
 
 ### Description
-xHTTP is an obfuscation layer that wraps traffic inside **legitimate‑looking HTTP flows**.
+uTLS modifies TLS handshake fingerprints to **match real Chrome‑like client behavior**.
 
 ### Strengths
-- blends into normal web traffic  
-- flexible header manipulation  
-- good for low‑intensity censorship  
+- strong JA3 mimicry  
+- avoids TLS fingerprint detection  
+- compatible with multiple transports  
 
 ### Weaknesses
-- moderate overhead  
-- weaker against advanced DPI  
+- requires careful tuning  
+- misconfiguration reduces mimicry quality  
 
 ### Use Cases
-- medium‑control regions  
-- fallback transport  
+- TLS camouflage  
+- handshake obfuscation  
 
 ---
 
-## 3.3 XTLS
+## 3.3 XTLS‑Vision
 
 ### Description
-XTLS is a high‑performance TLS variant optimized for low overhead and efficient data transfer.
+XTLS‑Vision is a high‑performance encrypted transport optimized for **low overhead and statistical flow obfuscation**.
 
 ### Strengths
 - excellent performance  
 - reduced CPU usage  
-- low latency  
+- strong resistance to flow analysis  
 
 ### Weaknesses
 - fingerprintable if misconfigured  
@@ -101,7 +99,27 @@ XTLS is a high‑performance TLS variant optimized for low overhead and efficien
 
 ---
 
-## 3.4 VLESS
+## 3.4 XHTTP
+
+### Description
+XHTTP wraps traffic inside **legitimate‑looking HTTP/3 flows**, providing strong camouflage.
+
+### Strengths
+- blends into normal web traffic  
+- flexible header and frame behavior  
+- good for medium‑intensity censorship  
+
+### Weaknesses
+- moderate overhead  
+- weaker against advanced DPI  
+
+### Use Cases
+- medium‑control regions  
+- fallback transport  
+
+---
+
+## 3.5 VLESS
 
 ### Description
 VLESS is a lightweight, flexible protocol with minimal metadata and strong extensibility.
@@ -121,10 +139,10 @@ VLESS is a lightweight, flexible protocol with minimal metadata and strong exten
 
 ---
 
-## 3.5 Hysteria2
+## 3.6 TUIC v5
 
 ### Description
-Hysteria2 is a QUIC‑based protocol optimized for **anti‑throttling** and high‑latency networks.
+TUIC v5 is a QUIC‑based protocol optimized for **high throughput and anti‑throttling**.
 
 ### Strengths
 - excellent throughput  
@@ -141,38 +159,14 @@ Hysteria2 is a QUIC‑based protocol optimized for **anti‑throttling** and hig
 
 ---
 
-## 3.6 Trojan
-
-### Description
-Trojan disguises traffic as **standard TLS traffic to a legitimate HTTPS server**.
-
-### Strengths
-- simple  
-- strong mimicry  
-- easy to deploy  
-
-### Weaknesses
-- SNI filtering can block it  
-- limited flexibility  
-
-### Use Cases
-- low‑risk regions  
-- simple deployments  
-
----
-
 # 4. Unified Transport Framework Integration
 
-All protocols share a common abstraction layer:
-
-```text
-Transport
-  ├── Handshake
-  ├── Encryption
-  ├── Obfuscation
-  ├── Session Management
-  └── Error Handling
-```
+    Transport
+      ├── Handshake
+      ├── Encryption
+      ├── Obfuscation
+      ├── Session Management
+      └── Error Handling
 
 This ensures:
 
@@ -195,12 +189,10 @@ Dawn Bridge Core uses AI routing to select the optimal protocol based on:
 
 Example logic:
 
-```text
-High-risk region → Reality / Trojan
-Medium-risk region → xHTTP / VLESS
-High-latency network → Hysteria2
-Performance-critical → XTLS
-```
+    High-risk region → REALITY
+    Medium-risk region → XHTTP / VLESS
+    High-latency network → TUIC v5
+    Performance-critical → XTLS‑Vision
 
 ---
 
@@ -209,8 +201,8 @@ Performance-critical → XTLS
 Potential future additions:
 
 - MASQUE (HTTP/3 proxying)
-- uTLS variants
-- Encrypted ClientHello (ECH) transports
+- additional uTLS variants
+- ECH‑based transports
 - PQC‑enhanced handshakes
 
 These will be evaluated based on:
