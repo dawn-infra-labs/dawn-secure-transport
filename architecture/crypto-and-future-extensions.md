@@ -17,7 +17,7 @@ Dawn Bridge Core follows four core principles:
    The system is designed to adopt PQC algorithms without redesigning the transport layer.
 
 3. **Modular Cryptographic Layers**  
-   Each transport protocol (`XHTTP`, `XTLS`, `Reality`, `VLESS`, `Hysteria2`, `Trojan`) defines its own crypto envelope, but all follow a unified abstraction.
+   Each transport protocol (`REALITY`, `uTLS`, `XTLS‑Vision`, `XHTTP`, `VLESS`, `TUIC v5`) defines its own crypto envelope, but all follow a unified abstraction.
 
 4. **Graceful Upgrade Path**  
    New algorithms can be introduced without breaking compatibility with older clients.
@@ -71,20 +71,17 @@ Each protocol integrates crypto differently, but all follow the same abstraction
 ### 3.1 XHTTP  
 Uses hybrid KEX + AEAD (`ChaCha20-Poly1305` or `AES-GCM`).
 
-### 3.2 XTLS  
+### 3.2 XTLS‑Vision  
 Leverages TLS 1.3 handshake with PQC extension support.
 
-### 3.3 Reality  
+### 3.3 REALITY  
 Uses deterministic key derivation + hybrid KEX.
 
 ### 3.4 VLESS  
 Lightweight handshake with optional PQC upgrade.
 
-### 3.5 Hysteria2  
+### 3.5 TUIC v5  
 QUIC-based crypto with PQC-ready handshake.
-
-### 3.6 Trojan  
-TLS-based crypto with PQC extension path.
 
 ---
 
