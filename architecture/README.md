@@ -2,7 +2,7 @@
 
 This directory contains the core architectural documents for Dawn Bridge Core.  
 Each file describes a major subsystem or design pillar of the platform.  
-All documents are transport‑agnostic and apply across `XHTTP`, `XTLS`, `Reality`, `VLESS`, `Hysteria2`, and `Trojan`.
+All documents are transport‑agnostic and apply across `REALITY`, `uTLS`, `XTLS‑Vision`, `XHTTP`, `VLESS`, and `TUIC v5`.
 
 ---
 
