@@ -82,6 +82,29 @@ Each transport is designed to resist different censorship strategies and network
 
 ---
 
+## 4.1 REALITY
+
+### Purpose
+A modern obfuscation layer designed to resist active probing and advanced DPI.
+
+### Characteristics
+- Mimics legitimate TLS servers without terminating TLS  
+- Rejects unauthorized clients with indistinguishable behavior  
+- Resistant to active probing  
+- No static fingerprints  
+- No detectable protocol banners  
+
+### Strengths
+- Extremely difficult to detect  
+- Excellent for high‑risk regions  
+- Strong active‑probe resistance  
+
+### Weaknesses
+- Requires correct server configuration  
+- Slightly more complex deployment  
+
+---
+
 ## 4.1 XHTTP
 
 ### Purpose
@@ -128,28 +151,6 @@ A transport designed to provide encrypted communication with advanced fingerprin
 
 ---
 
-## 4.3 Reality
-
-### Purpose
-A modern obfuscation layer designed to resist active probing and advanced DPI.
-
-### Characteristics
-- Mimics legitimate TLS servers without terminating TLS  
-- Rejects unauthorized clients with indistinguishable behavior  
-- Resistant to active probing  
-- No static fingerprints  
-- No detectable protocol banners  
-
-### Strengths
-- Extremely difficult to detect  
-- Excellent for high‑risk regions  
-- Strong active‑probe resistance  
-
-### Weaknesses
-- Requires correct server configuration  
-- Slightly more complex deployment  
-
----
 
 ## 4.4 VLESS
 
