@@ -125,12 +125,12 @@ All transports implement a common API, enabling seamless switching and fallback.
 ### Supported Transport Types
 Dawn Bridge Core currently supports six primary transport protocols, with future‑proofing for post‑quantum cryptography:
 
+- **REALITY** — modern obfuscation layer designed for active probing resistance
+- **uTLS** — TLS fingerprint adaptation layer that mimics real‑world client behavior  
+- **XTLS‑Vision** — encrypted transport with advanced fingerprint resistance   
 - **XHTTP** — lightweight, censorship‑resilient HTTP‑based transport  
-- **XTLS** — encrypted transport with advanced fingerprint resistance  
-- **Reality** — modern obfuscation layer designed for active probing resistance  
-- **VLESS** — flexible, metadata‑minimal transport for multi‑hop routing  
-- **Hysteria2** — high‑performance QUIC‑based transport optimized for unstable networks  
-- **Trojan** — TLS‑camouflaged transport designed to blend with normal HTTPS traffic  
+- **VLESS** — flexible, metadata‑minimal transport for multi‑hop routing    
+- **TUIC v5** — high‑performance QUIC‑based transport optimized for unstable networks    
 
 ### PQC‑Ready Transports
 - **PQC‑ready extensions** — future support for post‑quantum key exchange and hybrid cryptographic handshakes
