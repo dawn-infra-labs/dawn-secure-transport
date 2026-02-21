@@ -150,7 +150,7 @@ A transport designed to provide encrypted communication with advanced fingerprin
 
 ---
 
-## 4.1 XHTTP
+## 4.4 XHTTP
 
 ### Purpose
 A lightweight, censorship‑resilient HTTP‑based transport designed to blend with normal web traffic.
@@ -173,31 +173,7 @@ A lightweight, censorship‑resilient HTTP‑based transport designed to blend w
 
 ---
 
-## 4.2 XTLS
-
-### Purpose
-A transport designed to provide encrypted communication with advanced fingerprint resistance.
-
-### Characteristics
-- TLS‑based encryption  
-- Custom handshake patterns to avoid JA3 fingerprinting  
-- Randomized record sizes  
-- Timing jitter injection  
-- Optional session resumption obfuscation  
-
-### Strengths
-- Strong encryption  
-- Difficult to fingerprint  
-- Good for high‑security scenarios  
-
-### Weaknesses
-- Slightly higher overhead  
-- Requires careful tuning to avoid TLS anomalies  
-
----
-
-
-## 4.4 VLESS
+## 4.5 VLESS
 
 ### Purpose
 A flexible, metadata‑minimal transport suitable for multi‑hop routing.
@@ -219,48 +195,26 @@ A flexible, metadata‑minimal transport suitable for multi‑hop routing.
 
 ---
 
-## 4.5 Hysteria2
+## 4.6 TUIC v5
 
 ### Purpose
-A high‑performance QUIC‑based transport optimized for unstable or high‑latency networks.
+A high‑performance QUIC‑based transport optimized for unstable or high‑latency networks
 
 ### Characteristics
 - Built on QUIC  
 - Congestion control optimized for censorship environments  
 - High throughput  
 - NAT‑friendly  
-- Resistant to packet loss and throttling  
+- Resistant to packet loss and throttling
 
 ### Strengths
 - Fast  
 - Stable under poor network conditions  
-- Excellent for large data flows  
+- Excellent for large data flows
 
 ### Weaknesses
 - QUIC fingerprinting must be mitigated  
-- Higher CPU usage  
-
----
-
-## 4.6 Trojan
-
-### Purpose
-A TLS‑camouflaged transport designed to blend perfectly with normal HTTPS traffic.
-
-### Characteristics
-- Uses real TLS  
-- Traffic indistinguishable from HTTPS  
-- No protocol banners  
-- Simple and stable  
-
-### Strengths
-- Very high camouflage  
-- Easy to deploy  
-- Works well in moderate censorship environments  
-
-### Weaknesses
-- Can be throttled if TLS traffic is throttled  
-- Less flexible than VLESS or Hysteria2  
+- Higher CPU usage
 
 ---
 
