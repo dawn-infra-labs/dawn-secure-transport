@@ -15,7 +15,7 @@ Dawn Bridge Core processes data through five major stages:
 4. **Multi-Hop Forwarding**  
 5. **Response Path & Session Rotation**
 
-Each stage is transport-agnostic and applies to all protocols (`XHTTP`, `XTLS`, `Reality`, `VLESS`, `Hysteria2`, `Trojan`).
+Each stage is transport-agnostic and applies to all protocols (`REALITY`, `uTLS`, `XTLS‑Vision`, `XHTTP`, `VLESS`, `TUIC v5`).
 
 ---
 
