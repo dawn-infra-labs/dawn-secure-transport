@@ -198,7 +198,7 @@ A flexible, metadata‑minimal transport suitable for multi‑hop routing.
 ## 4.6 TUIC v5
 
 ### Purpose
-A high‑performance QUIC‑based transport optimized for unstable or high‑latency networks
+A high‑performance QUIC‑based transport optimized for unstable or high‑latency networks.
 
 ### Characteristics
 - Built on QUIC  
