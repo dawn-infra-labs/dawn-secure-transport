@@ -127,6 +127,29 @@ A TLS fingerprint adaptation layer that mimics real‑world client behavior.
 
 ---
 
+## 4.3 XTLS‑Vision
+
+### Purpose
+A transport designed to provide encrypted communication with advanced fingerprint resistance.
+
+### Characteristics  
+- TLS‑based encryption  
+- Custom handshake patterns to avoid JA3 fingerprinting  
+- Randomized record sizes  
+- Timing jitter injection  
+- Optional session resumption obfuscation
+
+### Strengths  
+- Strong encryption  
+- Difficult to fingerprint  
+- Good for high‑security scenarios
+
+### Weaknesses  
+- Slightly higher overhead  
+- Requires careful tuning to avoid TLS anomalies
+
+---
+
 ## 4.1 XHTTP
 
 ### Purpose
