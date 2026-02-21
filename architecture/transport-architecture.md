@@ -7,12 +7,12 @@ It is designed around a unified abstraction that allows multiple transports to c
 
 This document describes the architecture, interfaces, behaviors, and design principles of the six supported transports:
 
-- XHTTP  
-- XTLS  
-- Reality  
-- VLESS  
-- Hysteria2  
-- Trojan  
+- REALITY  
+- uTLS  
+- XTLS‑Vision 
+- XHTTP 
+- VLESS 
+- TUIC v5
 
 and the future‑oriented PQC‑ready extensions.
 
