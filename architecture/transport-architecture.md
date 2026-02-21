@@ -105,6 +105,28 @@ A modern obfuscation layer designed to resist active probing and advanced DPI.
 
 ---
 
+## 4.2 uTLS
+
+### Purpose
+A TLS fingerprint adaptation layer that mimics real‑world client behavior.
+
+### Characteristics
+- Adjusts ClientHello parameters  
+- Controls cipher suite ordering  
+- Tunes TLS extensions  
+- Aligns JA3/JA4 fingerprints with popular clients    
+
+### Strengths
+- Reduces detectability  
+- Integrates with REALITY, XHTTP, and XTLS‑Vision  
+- Lightweight and flexible  
+
+### Weaknesses  
+- Provides camouflage but not independent encryption  
+- Requires pairing with other transports
+
+---
+
 ## 4.1 XHTTP
 
 ### Purpose
