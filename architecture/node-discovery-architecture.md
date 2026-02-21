@@ -129,10 +129,10 @@ Policies are delivered through:
 ### Example Policy Structure
 
 ```
-preferred_transports reality xtls
+preferred_transports reality xtls-vision
 avoid_regions region_x
 deprecated_nodes node123
-fallback_order xhttp trojan
+fallback_order xhttp vless
 ```
 
 ---
