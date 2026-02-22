@@ -25,7 +25,7 @@ crates/
 │   └── (DHT, DNS TXT fallback, node verification)
 │
 └── transports/
-    └── (xHTTP, XTLS, Reality, VLESS, Hysteria2, Trojan)
+    └── (REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5)
 ```
 
 Each crate maps directly to a subsystem described in the architecture documents.
