@@ -47,7 +47,7 @@ modules/
 Implements the unified abstraction layer for all censorship‑resistant transport protocols.  
 Defines handshake flows, encryption boundaries, behavioral simulation, and protocol‑agnostic interfaces.
 
-This module enables the system to support multiple transports—xHTTP, XTLS, Hysteria2, VLESS, Reality, and Trojan—under a single coherent design.
+This module enables the system to support multiple transports—REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, and TUIC v5—under a single coherent design.
 
 It ensures:
 
