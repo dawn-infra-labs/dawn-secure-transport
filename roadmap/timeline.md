@@ -49,12 +49,12 @@ The timeline is divided into four major phases: foundational, core implementatio
 ## Phase 3 — Multi‑Transport & Multi‑Hop (Month 6–9)
 
 ### Month 6–7
-- implement Reality transport  
-- implement xHTTP transport  
+- implement REALITY transport  
+- implement XHTTP transport
 
 ### Month 7–8
-- implement Hysteria2 transport  
-- implement VLESS transport  
+- implement TUIC v5 transport  
+- implement session‑layer VLESS integration
 
 ### Month 8–9
 - implement multi‑hop path optimizer  
