@@ -3,7 +3,7 @@
 The Transport Framework provides a unified, extensible, and censorship‑resistant abstraction layer for all Dawn Bridge Core transport protocols.  
 It defines the lifecycle, interfaces, handshake model, encryption boundaries, and behavioral simulation mechanisms shared across all supported transports.
 
-This module enables the system to integrate multiple advanced circumvention protocols—xHTTP, XTLS, Hysteria2, VLESS, Reality, and Trojan—under a single coherent architecture.
+This module enables the system to integrate multiple advanced circumvention protocols—REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, and TUIC v5—under a single coherent architecture.
 
 ---
 
