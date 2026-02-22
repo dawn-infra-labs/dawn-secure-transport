@@ -24,7 +24,7 @@ Deliverables are grouped into documentation, implementation, testing, and operat
 
 ### D3 — Protocol Specifications
 - PROTOCOLS.md  
-- detailed specs for xHTTP, XTLS, Reality, VLESS, Hysteria2, Trojan  
+- detailed specs for REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5 
 
 ### D4 — Roadmap Documentation
 - roadmap/README.md  
@@ -55,12 +55,12 @@ Deliverables are grouped into documentation, implementation, testing, and operat
 - basic path optimizer  
 
 ### I4 — Multi‑Transport Support
-- Reality  
-- xHTTP  
-- Hysteria2  
+- REALITY
+- uTLS  
+- XTLS‑Vision  
+- XHTTP  
 - VLESS  
-- XTLS  
-- Trojan  
+- TUIC v5
 
 ### I5 — Multi‑Hop Routing
 - multi‑hop path builder  
