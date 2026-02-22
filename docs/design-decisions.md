@@ -56,7 +56,7 @@ A modular design enables flexibility, scalability, and resilience against censor
 
 ### Decision
 Support six complementary transport protocols:
-Reality, xHTTP, XTLS, VLESS, Hysteria2, Trojan.
+REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5.
 
 ### Motivation
 - fingerprint diversity  
