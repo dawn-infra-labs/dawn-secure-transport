@@ -76,12 +76,12 @@ Risk scores influence:
 ### 3. Transport Selector
 Chooses the optimal transport protocol from:
 
-- xHTTP  
-- XTLS  
-- Reality  
+- REALITY  
+- uTLS  
+- XTLS‑Vision  
+- XHTTP  
 - VLESS  
-- Hysteria2  
-- Trojan  
+- TUIC v5  
 
 Selection is based on:
 
