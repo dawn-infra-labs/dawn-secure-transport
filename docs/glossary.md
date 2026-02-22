@@ -11,7 +11,7 @@ Terms are grouped by domain: transport, routing, discovery, cryptography, and ce
 
 ### Transport Protocol
 A network protocol used to encapsulate and transmit user traffic.  
-Examples: Reality, xHTTP, XTLS, VLESS, Hysteria2, Trojan.
+Examples: REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5.
 
 ### Transport Framework
 The abstraction layer that unifies all transport protocols under a common interface.
