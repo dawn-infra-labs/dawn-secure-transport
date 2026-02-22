@@ -42,7 +42,7 @@ Introduce next‑generation capabilities and expand the ecosystem.
 ### Architecture & Documentation
 - finalize all architecture documents  
 - complete module‑level READMEs  
-- define protocol specifications (xHTTP, XTLS, Reality, VLESS, Hysteria2, Trojan)  
+- define protocol specifications (REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5)  
 - publish threat model and data‑flow diagrams  
 
 ### Transport Framework
@@ -67,7 +67,7 @@ Introduce next‑generation capabilities and expand the ecosystem.
 ### Transport Framework Implementation
 - implement core traits and session manager  
 - implement handshake engine  
-- add first protocol (Reality or xHTTP)  
+- add first protocol (REALITY)  
 - integrate with AI Routing for protocol selection  
 
 ### Node Discovery Implementation
@@ -91,7 +91,7 @@ Introduce next‑generation capabilities and expand the ecosystem.
 ## Long‑Term Goals (6–12 months)
 
 ### Multi‑Transport Support
-- implement additional transports (XTLS, Hysteria2, Trojan, VLESS)  
+- implement additional transports (uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5)  
 - add protocol auto‑tuning based on censorship pressure  
 
 ### Advanced Node Discovery
