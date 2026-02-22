@@ -50,9 +50,9 @@ Milestones are grouped into three phases: foundational, integration, and advance
 ## Phase 3 — Multi‑Transport & Multi‑Hop (v0.3)
 
 ### M3.1 — Multi‑Transport Support
-- Reality implemented  
-- xHTTP implemented  
-- Hysteria2 implemented  
+- REALITY implemented  
+- XHTTP implemented  
+- TUIC v5 implemented
 
 ### M3.2 — Multi‑Hop Routing
 - path optimizer supports multi‑hop  
