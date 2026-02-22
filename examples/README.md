@@ -59,7 +59,7 @@ cargo run --example <name>
 ### 1. Basic Transport Example
 Shows how to:
 - initialize the core runtime  
-- load a single transport (e.g., Reality or xHTTP)  
+- load a single transport (e.g., REALITY or XHTTP)  
 - establish a session  
 
 ### 2. Multi‑Transport Example
