@@ -75,12 +75,12 @@ This crate integrates directly with AI Routing for node prioritization.
 ### `transports/`
 Implements all supported transport protocols:
 
-- xHTTP  
-- XTLS  
-- Reality  
-- VLESS  
-- Hysteria2  
-- Trojan  
+- REALITY
+- uTLS
+- XTLS‑Vision
+- XHTTP
+- VLESS
+- TUIC v5
 
 Each protocol will be implemented as a submodule within this crate, unified by the Transport Framework.
 
