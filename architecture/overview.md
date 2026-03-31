@@ -16,6 +16,8 @@ This architecture allows the system to evolve as censorship techniques change, w
 
 The goal of this document is to provide a high‑level understanding of how these modules interact, the principles guiding their design, and the threat model that shapes the system’s behavior.
 
+Note that this document describes system‑level architecture and therefore references transport‑agnostic concepts rather than the specific amalgamated or extended protocols in the Rux Protocol Suite.
+
 ---
 
 ## 2. Design Principles
