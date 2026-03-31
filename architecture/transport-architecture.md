@@ -24,6 +24,8 @@ The transport layer is responsible for:
 - Providing consistent APIs to the routing engine  
 - Supporting dynamic switching and fallback  
 
+For detailed specifications of the amalgamated and extended protocols in the Rux Protocol Suite, see the documentation in the `docs/` directory.
+
 ---
 
 ## 2. Design Principles
