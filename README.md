@@ -89,8 +89,6 @@ a shared abstraction that provides:
 
 RUTL is the architectural foundation that enables the suite to function as a coherent system.
 
-For detailed specifications, protocol diagrams, and behavioral notes, see the documentation in the `docs/` directory.
-
 ---
 
 # 🧩 Architecture Overview
