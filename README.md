@@ -17,7 +17,11 @@ All components are released under the AGPLv3 license to maximize transparency, e
 # ✨ Key Capabilities
 
 - Modular Rust workspace with cleanly separated crates  
-- Rux Protocol Suite
+- Rux Protocol Suite (**ruxsv
+  ruxvv
+  ruxpv
+  ruxte
+**)
   ruxsv
   ruxvv
   ruxpv
