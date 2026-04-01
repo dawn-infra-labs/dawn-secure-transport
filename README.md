@@ -65,6 +65,10 @@ Protocols that combine multiple source protocols into cohesive, full‑featured 
 - Amalgamates: REALITY + uTLS + XHTTP (Stream) + VLESS  
 - A full‑capability proxy, encryption, transport, and obfuscation protocol — the **“stealth edition”**, optimized for **deep concealment** under strict censorship
 
+### **ruxpv**
+- Amalgamates: REALITY + uTLS + XHTTP (Packet) + VLESS  
+- A full‑capability proxy, encryption, transport, and obfuscation protocol — the **“Survival edition”**, optimized for **resilience under extreme censorship** by fragmenting traffic into discrete HTTP packets and eliminating long‑connection signatures.
+
 ---
 
 ## Extensions Protocol
