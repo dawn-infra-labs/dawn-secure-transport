@@ -1,7 +1,8 @@
 # Dawn Bridge Core — Rux Protocol Suite Overview
 
 This document provides a high‑level overview of the protocols supported by Dawn Bridge Core.  
-Detailed specifications are located in `docs/protocols/`.
+
+For detailed specifications of the Rux Protocol Suite (ruxvv, ruxsv, ruxpv, ruxte), see `docs/protocols/`.
 
 ---
 
@@ -37,7 +38,6 @@ For detailed specifications of the Rux Protocol Suite (ruxvv, ruxsv, ruxpv, ruxt
 ## 2. Comparison (Source Protocols)
 
 The following table compares the Source Protocols.  
-For Rux Protocol Suite details, see `docs/protocols/`.
 
 | Protocol     | Type                | Strengths                          | Weaknesses |
 |--------------|---------------------|------------------------------------|------------|
