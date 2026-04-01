@@ -17,15 +17,7 @@ All components are released under the AGPLv3 license to maximize transparency, e
 # ✨ Key Capabilities
 
 - Modular Rust workspace with cleanly separated crates  
-- Rux Protocol Suite (**ruxsv
-  ruxvv
-  ruxpv
-  ruxte
-**)
-  ruxsv
-  ruxvv
-  ruxpv
-  ruxte
+- Rux Protocol Suite (**ruxsv, ruxvv, ruxpv, ruxte**)
 - Unified transport abstraction layer (RUTL)  
 - Zero‑cost abstractions enabling low memory overhead and high QPS performance under heavy concurrency  
 - Traffic obfuscation and DPI evasion  
