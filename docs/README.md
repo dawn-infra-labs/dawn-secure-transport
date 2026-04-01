@@ -31,7 +31,7 @@ The directory is organized into several categories:
 ```text
 docs/
 │
-├── protocols/       ← Rux Suite, Source Protocols, RUTL
+├── protocols/   ← Rux Suite, Source Protocols, RUTL
 │   ├── README.md
 │   ├── ruxvv.md
 │   ├── ruxsv.md
