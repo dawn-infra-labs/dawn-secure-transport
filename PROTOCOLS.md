@@ -1,4 +1,4 @@
-# Dawn Bridge Core — Protocol Suite Overview
+# Dawn Bridge Core — Rux Protocol Suite Overview
 
 This document provides a high‑level overview of the protocols supported by Dawn Bridge Core.  
 Detailed specifications are located in `docs/protocols/`.
