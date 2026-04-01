@@ -1,7 +1,7 @@
 # Documentation Overview
 
 The `docs/` directory contains all supplementary documentation for Dawn Bridge Core.  
-While the `architecture/`, `modules/`, and `roadmap/` directories describe the system design and development plan, the `docs/` directory provides additional materials that support implementation, onboarding, research, and long‑term maintenance.
+While the `architecture/`, `modules/`, and `roadmap/` directories describe the system design and development plan, the `docs/` directory provides additional materials that support implementation, onboarding, research, protocol understanding, and long‑term maintenance.
 
 This directory is intended for contributors, auditors, funders, and researchers who require deeper context beyond the core architecture.
 
@@ -12,6 +12,8 @@ This directory is intended for contributors, auditors, funders, and researchers 
 The `docs/` directory serves several key functions:
 
 - provide extended technical explanations  
+- document the Rux Protocol Suite and Source Protocols  
+- describe the Rust Unified Transport Layer (RUTL)  
 - store research notes and design rationales  
 - document internal conventions and standards  
 - support onboarding for new contributors  
@@ -22,13 +24,20 @@ It complements the high‑level architecture documents by offering deeper detail
 
 ---
 
-## Recommended Structure
+## Documentation Structure
 
-The following structure outlines the intended organization of the `docs/` directory.  
-Files will be added progressively as the project evolves.
+The directory is organized into several categories:
 
 ```text
 docs/
+│
+├── protocols/              ← Rux Suite, Source Protocols, RUTL
+│   ├── README.md
+│   ├── ruxvv.md
+│   ├── ruxsv.md
+│   ├── ruxpv.md
+│   ├── ruxte.md
+│   └── source-protocols.md
 │
 ├── glossary.md
 ├── design-decisions.md
@@ -39,6 +48,23 @@ docs/
 ```
 
 Each file has a specific purpose, described below.
+
+---
+
+## Protocol Documentation
+
+The `protocols/` directory contains all protocol‑related documentation, including:
+
+- **Rux Protocol Suite**  
+  ruxvv (Performance), ruxsv (Stealth), ruxpv (Survival), ruxte (All‑terrain)
+
+- **Source Protocols**  
+  REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5
+
+- **Rust Unified Transport Layer (RUTL)**  
+  The abstraction layer that unifies all transports under a consistent interface.
+
+This section is the primary reference for contributors working on transport, routing, or censorship‑resistance features.
 
 ---
 
