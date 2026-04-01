@@ -55,7 +55,8 @@ The project does not alter their semantics or implementation.
 
 ## Amalgamated Protocols
 
-Fusion‑based protocols that combine multiple source protocols into cohesive, full‑featured transports.
+Amalgamated Protocols
+Protocols that combine multiple source protocols into cohesive, full‑featured transports.
 
 ### **ruxvv**
 - Amalgamates: REALITY + uTLS + XTLS‑Vision + VLESS  
