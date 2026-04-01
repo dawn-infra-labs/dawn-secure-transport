@@ -1,185 +1,90 @@
-# Dawn Bridge Core — Supported Protocols
+# Dawn Bridge Core — Protocol Suite Overview
 
-This document provides a detailed overview of all transport protocols supported by Dawn Bridge Core.  
-It explains their purpose, characteristics, strengths, weaknesses, and how they fit into the unified transport framework.
-
-The goal is to provide a clear, technical, and future‑proof reference for contributors, auditors, and researchers.
+This document provides a high‑level overview of the protocols supported by Dawn Bridge Core.  
+Detailed specifications are located in `docs/protocols/`.
 
 ---
 
-# 1. Overview
+## 1. Protocol Categories
 
-Dawn Bridge Core supports a **multi‑transport strategy** to maximize censorship resistance, performance, and adaptability.
+Dawn Bridge Core organizes protocols into three categories:
 
-Supported protocols:
+### **Amalgamated Protocols**
+Unified, full‑featured transports created by combining multiple source protocols.
 
-- REALITY  
-- uTLS  
-- XTLS‑Vision  
-- XHTTP  
-- VLESS  
-- TUIC v5  
+- **ruxvv (Performance)**  
+  REALITY + uTLS + XTLS‑Vision + VLESS
 
-Each protocol is integrated through the **Unified Transport Framework**, ensuring consistent behavior, shared abstractions, and AI‑driven selection.
+- **ruxsv (Stealth)**  
+  REALITY + uTLS + XHTTP (Stream) + VLESS
 
----
+- **ruxpv (Survival)**  
+  REALITY + uTLS + XHTTP (Packet) + VLESS
 
-# 2. Protocol Comparison Table
+### **Extensions Protocols**
+Enhancements built on top of existing transports.
 
-    Protocol     | Type                | Strengths                          | Weaknesses
-    -------------|---------------------|-------------------------------------|------------------------------
-    REALITY      | TLS mimicry         | indistinguishable from HTTPS        | complex config
-    uTLS         | TLS fingerprinting  | Chrome‑like handshake behavior      | requires careful tuning
-    XTLS‑Vision  | TCP obfuscation     | high performance, low overhead      | fingerprintable if misused
-    XHTTP        | HTTP/3 camouflage   | blends into normal web traffic      | moderate overhead
-    VLESS        | lightweight         | simple, flexible, low metadata      | requires obfuscation layer
-    TUIC v5      | QUIC‑based          | high‑speed, anti‑throttling         | QUIC is increasingly targeted
+- **ruxte (All‑terrain)**  
+  Based on TUIC v5, adds optional TCP fallback without altering TUIC semantics.
 
----
+### **Source Protocols**
+REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5
 
-# 3. Protocol Details
-
-## 3.1 REALITY
-
-### Description
-REALITY is a TLS‑based protocol designed to be **cryptographically indistinguishable from real HTTPS traffic**.
-
-### Strengths
-- excellent mimicry  
-- strong resistance to active probing  
-- minimal metadata leakage  
-
-### Weaknesses
-- configuration complexity  
-- requires precise certificate handling  
-
-### Use Cases
-- high‑risk regions  
-- environments with aggressive DPI  
+For detailed specifications of the Rux Protocol Suite (ruxvv, ruxsv, ruxpv, ruxte), see `docs/protocols/`.
 
 ---
 
-## 3.2 uTLS
+## 2. Comparison (Source Protocols)
 
-### Description
-uTLS modifies TLS handshake fingerprints to **match real Chrome‑like client behavior**.
+The following table compares the Source Protocols.  
+For Rux Protocol Suite details, see `docs/protocols/`.
 
-### Strengths
-- strong JA3 mimicry  
-- avoids TLS fingerprint detection  
-- compatible with multiple transports  
-
-### Weaknesses
-- requires careful tuning  
-- misconfiguration reduces mimicry quality  
-
-### Use Cases
-- TLS camouflage  
-- handshake obfuscation  
+| Protocol     | Type                | Strengths                          | Weaknesses |
+|--------------|---------------------|------------------------------------|------------|
+| REALITY      | TLS mimicry         | indistinguishable from HTTPS        | complex config |
+| uTLS         | TLS fingerprinting  | Chrome‑like handshake behavior      | requires tuning |
+| XTLS‑Vision  | TCP obfuscation     | high performance, low overhead      | fingerprintable if misused |
+| XHTTP        | HTTP camouflage     | blends into normal web traffic      | moderate overhead |
+| VLESS        | lightweight         | simple, flexible, low metadata      | requires obfuscation layer |
+| TUIC v5      | QUIC‑based          | high‑speed, anti‑throttling         | QUIC increasingly targeted |
 
 ---
 
-## 3.3 XTLS‑Vision
+## 3. Rust Unified Transport Layer (RUTL)
 
-### Description
-XTLS‑Vision is a high‑performance encrypted transport optimized for **low overhead and statistical flow obfuscation**.
+The **Rust Unified Transport Layer (RUTL)** provides the abstraction that unifies Source Protocols and the Rux Protocol Suite.  
+It defines a consistent interface for transport behavior, enabling protocol interchangeability and AI‑driven selection.
 
-### Strengths
-- excellent performance  
-- reduced CPU usage  
-- strong resistance to flow analysis  
+RUTL provides:
 
-### Weaknesses
-- fingerprintable if misconfigured  
-- requires strict adherence to spec  
+- a unified handshake model  
+- consistent encryption and key schedule handling  
+- shared obfuscation and camouflage primitives  
+- session lifecycle management  
+- transport‑agnostic error semantics  
+- a stable API surface for contributors and extensions  
 
-### Use Cases
-- performance‑critical scenarios  
-- stable networks  
+```
+RUTL
+  ├── Handshake
+  ├── Encryption
+  ├── Obfuscation
+  ├── Session Management
+  └── Error Handling
+```
 
----
+This abstraction ensures:
 
-## 3.4 XHTTP
-
-### Description
-XHTTP wraps traffic inside **legitimate‑looking HTTP/3 flows**, providing strong camouflage.
-
-### Strengths
-- blends into normal web traffic  
-- flexible header and frame behavior  
-- good for medium‑intensity censorship  
-
-### Weaknesses
-- moderate overhead  
-- weaker against advanced DPI  
-
-### Use Cases
-- medium‑control regions  
-- fallback transport  
-
----
-
-## 3.5 VLESS
-
-### Description
-VLESS is a lightweight, flexible protocol with minimal metadata and strong extensibility.
-
-### Strengths
-- simple  
-- low overhead  
-- easy to integrate with obfuscation layers  
-
-### Weaknesses
-- requires additional camouflage  
-- handshake is not inherently mimicry‑safe  
-
-### Use Cases
-- custom obfuscation  
-- multi‑transport fallback  
-
----
-
-## 3.6 TUIC v5
-
-### Description
-TUIC v5 is a QUIC‑based protocol optimized for **high throughput and anti‑throttling**.
-
-### Strengths
-- excellent throughput  
-- strong resistance to bandwidth throttling  
-- good for unstable networks  
-
-### Weaknesses
-- QUIC is increasingly targeted by censors  
-- handshake fingerprinting risks  
-
-### Use Cases
-- high‑latency regions  
-- networks with heavy throttling  
-
----
-
-# 4. Unified Transport Framework Integration
-
-    Transport
-      ├── Handshake
-      ├── Encryption
-      ├── Obfuscation
-      ├── Session Management
-      └── Error Handling
-
-This ensures:
-
-- consistent API  
+- consistent behavior across all transports  
 - shared security guarantees  
-- AI‑driven protocol selection  
 - simplified maintenance  
+- clean separation between protocol logic and application logic  
 
 ---
 
-# 5. Protocol Selection Logic
+## 4. Protocol Selection Logic
 
-Dawn Bridge Core uses AI routing to select the optimal protocol based on:
+Dawn Bridge Core uses AI‑driven routing to select the optimal protocol based on:
 
 - regional censorship intensity  
 - network conditions  
@@ -189,47 +94,55 @@ Dawn Bridge Core uses AI routing to select the optimal protocol based on:
 
 Example logic:
 
-    High-risk region → REALITY
-    Medium-risk region → XHTTP / VLESS
-    High-latency network → TUIC v5
-    Performance-critical → XTLS‑Vision
+```
+High‑risk region → ruxsv
+Medium‑risk region → ruxvv
+Extreme censorship → ruxpv
+Diverse constrained networks → ruxte
+```
 
 ---
 
-# 6. Future Protocols (Planned)
+## 5. Future Protocols (Planned)
 
-Potential future additions:
+Future additions will be integrated into the Rux Protocol Suite as either new Amalgamated or Extension protocols.
+
+Candidates under evaluation:
 
 - MASQUE (HTTP/3 proxying)
-- additional uTLS variants
 - ECH‑based transports
 - PQC‑enhanced handshakes
+- additional uTLS variants
 
-These will be evaluated based on:
+Evaluation criteria:
 
 - censorship resilience  
-- performance  
+- performance characteristics  
 - implementation complexity  
 - ecosystem maturity  
 
 ---
 
-# 7. Security Notes
+## 6. Security Notes
 
-- all protocols must minimize metadata  
-- mimicry must be precise  
-- handshake behavior must match real protocols  
-- transports must fail closed under probing  
-- padding and timing jitter are required  
+All protocols within the Rux Suite and Source Protocols must adhere to strict security principles:
+
+- minimize metadata leakage  
+- ensure precise mimicry and handshake fidelity  
+- fail closed under active probing  
+- apply padding and timing jitter  
+- avoid distinguishable flow patterns  
+- maintain protocol‑consistent error behavior  
 
 ---
 
-# 8. Contribution Notes
+## 7. Contribution Notes
 
 When adding or modifying a protocol:
 
-- follow the Unified Transport Framework  
+- integrate with the Rust Unified Transport Layer (RUTL)  
 - document handshake behavior  
 - document fingerprinting risks  
 - include integration tests  
-- update routing logic
+- update routing logic  
+- ensure compatibility with AI‑driven selection
