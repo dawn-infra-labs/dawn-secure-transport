@@ -31,8 +31,6 @@ Enhancements built on top of existing transports.
 ### **Source Protocols**
 REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5
 
-For detailed specifications of the Rux Protocol Suite (ruxvv, ruxsv, ruxpv, ruxte), see `docs/protocols/`.
-
 ---
 
 ## 2. Comparison (Source Protocols)
