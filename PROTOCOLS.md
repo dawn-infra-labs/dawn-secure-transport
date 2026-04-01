@@ -29,7 +29,7 @@ Enhancements built on top of existing transports.
   Based on TUIC v5, adds optional TCP fallback without altering TUIC semantics.
 
 ### **Source Protocols**
-REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5
+REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5.
 
 ---
 
