@@ -2,7 +2,7 @@
 
 This directory contains the core architectural documents for Dawn Bridge Core.  
 Each file describes a major subsystem or design pillar of the platform.  
-All documents are transport‑agnostic and apply across REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, and TUIC v5.
+All documents are transport‑agnostic and apply across REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS.
 
 These documents reference the underlying source protocols rather than the Rux Protocol Suite, because the system architecture is transport‑agnostic and applies independently of any specific amalgamated or extended protocol.
 
