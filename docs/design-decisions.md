@@ -55,8 +55,8 @@ A modular design enables flexibility, scalability, and resilience against censor
 ## 3. Multi‑Transport Strategy
 
 ### Decision
-Support six complementary transport protocols:
-REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5.
+Support five complementary transport protocols:
+REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS.
 
 ### Motivation
 - fingerprint diversity  
