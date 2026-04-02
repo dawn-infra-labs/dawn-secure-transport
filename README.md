@@ -84,7 +84,7 @@ a shared abstraction that provides:
 
 RUTL is the architectural foundation and central orchestrator that enables the suite to function as a coherent system.  
 It provides AI‑driven routing, multi‑path concurrency, and protocol management.  
-For detailed design notes and engineering considerations, see docs/protocols/RUTL.md.
+For detailed design notes and engineering considerations, see `docs/protocols/RUTL.md`.
 
 ---
 
