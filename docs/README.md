@@ -36,7 +36,6 @@ docs/
 │   ├── ruxvv.md
 │   ├── ruxsv.md
 │   ├── ruxpv.md
-│   ├── ruxte.md
 │   └── source-protocols.md
 │
 ├── glossary.md
