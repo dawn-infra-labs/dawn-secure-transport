@@ -24,17 +24,12 @@ Designed for deep concealment under strict censorship, resistant to probing and 
 Amalgamates: REALITY + uTLS + XHTTP (Packet) + VLESS  
 Survival‑mode transport that fragments traffic into discrete HTTP packets, eliminating long‑connection signatures under extreme censorship.
 
-### **ruxte (All‑terrain)**
-Based on TUIC v5, adds optional TCP fallback without altering TUIC semantics.  
-A QUIC‑based “all‑terrain” engine suitable for diverse constrained network conditions.
-
 Each protocol has its own dedicated document:
 
 ```
 ruxvv.md
 ruxsv.md
 ruxpv.md
-ruxte.md
 ```
 
 ---
