@@ -112,7 +112,6 @@ The transport subsystem includes:
 - **ruxvv**  
 - **ruxsv**
 - **ruxpv**
-- **ruxte**  
 - **RUTL unified abstraction layer**
 
 ---
