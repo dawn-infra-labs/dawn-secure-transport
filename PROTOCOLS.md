@@ -38,7 +38,6 @@ The following table compares the Source Protocols.
 | XTLS‑Vision  | TCP obfuscation     | high performance, low overhead      | fingerprintable if misused |
 | XHTTP        | HTTP camouflage     | blends into normal web traffic      | moderate overhead |
 | VLESS        | lightweight         | simple, flexible, low metadata      | requires obfuscation layer |
-| TUIC v5      | QUIC‑based          | high‑speed, anti‑throttling         | QUIC increasingly targeted |
 
 ---
 
