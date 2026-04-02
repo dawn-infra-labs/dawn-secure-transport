@@ -63,13 +63,16 @@ RUTL
   ├── Session Management
   └── Error Handling
 ```
-
-This abstraction ensures:
+This orchestration ensures:
 
 - consistent behavior across all transports  
 - shared security guarantees  
 - simplified maintenance  
 - clean separation between protocol logic and application logic  
+- AI‑driven routing and adaptive protocol switching  
+- multi‑path concurrency to generate chaotic traffic fingerprints  
+
+For detailed design notes and engineering considerations, see `docs/protocols/RUTL.md`.
 
 ---
 
