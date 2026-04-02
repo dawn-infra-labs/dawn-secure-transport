@@ -82,7 +82,9 @@ a shared abstraction that provides:
 - Extensible transport pipeline  
 - Common handshake and routing interfaces  
 
-RUTL is the architectural foundation that enables the suite to function as a coherent system.
+RUTL is the architectural foundation and central orchestrator that enables the suite to function as a coherent system.  
+It provides AI‑driven routing, multi‑path concurrency, and protocol management.  
+For detailed design notes and engineering considerations, see docs/protocols/RUTL.md.
 
 ---
 
