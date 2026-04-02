@@ -85,7 +85,7 @@ This abstraction ensures:
 - clean separation between protocol logic and application logic  
 - compatibility with AI‑driven protocol selection  
 
-- RUTL: see 'RUTL.md' for the unified abstraction layer that orchestrates all protocols
+- RUTL: see **RUTL.md** for the unified abstraction layer that orchestrates all protocols
 
 ---
 
