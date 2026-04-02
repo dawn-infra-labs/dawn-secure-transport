@@ -133,7 +133,7 @@ All protocols within the Rux Suite and Source Protocols must adhere to strict se
 
 When adding or modifying a protocol:
 
-- integrate with the Rust Unified Transport Layer (RUTL)  
+- integrate with the Rust Unified Transport Layer (RUTL, see `docs/protocols/RUTL.md`)
 - document handshake behavior  
 - document fingerprinting risks  
 - include integration tests  
