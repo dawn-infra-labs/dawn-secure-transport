@@ -43,8 +43,8 @@ The following table compares the Source Protocols.
 
 ## 3. Rust Unified Transport Layer (RUTL)
 
-The **Rust Unified Transport Layer (RUTL)** provides the abstraction that unifies Source Protocols and the Rux Protocol Suite.  
-It defines a consistent interface for transport behavior, enabling protocol interchangeability and AI‑driven selection.
+The **Rust Unified Transport Layer (RUTL)** is the central orchestrator that unifies Source Protocols, the Rux Protocol Suite, and additional full‑feature protocols (e.g., TUIC v5, Juicity).  
+It defines a consistent interface for transport behavior, enabling protocol interchangeability, AI‑driven dynamic routing, and multi‑path concurrency.
 
 RUTL provides:
 
