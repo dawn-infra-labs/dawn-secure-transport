@@ -13,15 +13,15 @@ The Rux Protocol Suite defines four cohesive transports, each designed for speci
 They are built by amalgamating or extending Source Protocols into unified, full‑featured designs.
 
 ### **ruxvv (Performance)**
-REALITY + uTLS + XTLS‑Vision + VLESS  
+Amalgamates:REALITY + uTLS + XTLS‑Vision + VLESS  
 Optimized for high‑performance scenarios with flexible, metadata‑minimal routing.
 
 ### **ruxsv (Stealth)**
-REALITY + uTLS + XHTTP (Stream) + VLESS  
+Amalgamates:REALITY + uTLS + XHTTP (Stream) + VLESS  
 Designed for deep concealment under strict censorship, resistant to probing and advanced DPI.
 
 ### **ruxpv (Survival)**
-REALITY + uTLS + XHTTP (Packet) + VLESS  
+Amalgamates:REALITY + uTLS + XHTTP (Packet) + VLESS  
 Survival‑mode transport that fragments traffic into discrete HTTP packets, eliminating long‑connection signatures under extreme censorship.
 
 ### **ruxte (All‑terrain)**
