@@ -9,7 +9,7 @@ These documents are intended for contributors, auditors, and researchers working
 
 ## 1. Rux Protocol Suite
 
-The Rux Protocol Suite defines four cohesive transports, each designed for specific adversarial environments.  
+The Rux Protocol Suite defines three cohesive transports, each designed for specific adversarial environments.  
 They are built by amalgamating or extending Source Protocols into unified, full‑featured designs.
 
 ### **ruxvv (Performance)**
