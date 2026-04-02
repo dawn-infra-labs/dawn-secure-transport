@@ -132,7 +132,6 @@ Dawn Bridge Core currently supports six primary transport protocols, with future
 - **XTLS‑Vision** — encrypted transport with advanced fingerprint resistance   
 - **XHTTP** — lightweight, censorship‑resilient HTTP‑based transport  
 - **VLESS** — flexible, metadata‑minimal transport for multi‑hop routing    
-- **TUIC v5** — high‑performance QUIC‑based transport optimized for unstable networks    
 
 ### PQC‑Ready Transports
 - **PQC‑ready extensions** — future support for post‑quantum key exchange and hybrid cryptographic handshakes
