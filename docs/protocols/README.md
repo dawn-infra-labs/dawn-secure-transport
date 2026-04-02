@@ -50,7 +50,6 @@ It covers:
 - XTLS‑Vision  
 - XHTTP  
 - VLESS  
-- TUIC v5  
 
 This file provides background context and comparison for contributors working on transport behavior or integration.
 
