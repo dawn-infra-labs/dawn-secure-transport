@@ -22,14 +22,8 @@ Unified, full‑featured transports created by combining multiple source protoco
 - **ruxpv (Survival)**  
   REALITY + uTLS + XHTTP (Packet) + VLESS
 
-### **Extensions Protocols**
-Enhancements built on top of existing transports.
-
-- **ruxte (All‑terrain)**  
-  Based on TUIC v5, adds optional TCP fallback without altering TUIC semantics.
-
 ### **Source Protocols**
-REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5.
+REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS.
 
 ---
 
