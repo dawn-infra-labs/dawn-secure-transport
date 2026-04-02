@@ -114,7 +114,7 @@ The transport subsystem includes:
 - **ruxvv**  
 - **ruxsv**
 - **ruxpv**
-- **- RUTL unified abstraction layer (see `docs/protocols/RUTL.md` for details)**
+- **RUTL unified abstraction layer (see `docs/protocols/RUTL.md` for details)**
 
 ---
 
