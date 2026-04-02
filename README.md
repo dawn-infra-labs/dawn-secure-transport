@@ -18,7 +18,7 @@ All components are released under the AGPLv3 license to maximize transparency, e
 
 - Modular Rust workspace with cleanly separated crates  
 - Rux Protocol Suite (**ruxsv, ruxvv, ruxpv**)
-- Rust Unified Transport Layer (RUTL): central orchestrator for all protocols, see 'docs/protocols/RUTL.md'.
+- Rust Unified Transport Layer (RUTL): central orchestrator for all protocols, see `docs/protocols/RUTL.md`.
 - Zero‑cost abstractions enabling low memory overhead and high QPS performance under heavy concurrency  
 - Traffic obfuscation and DPI evasion  
 - Decentralized node discovery (DHT + DNS TXT)  
