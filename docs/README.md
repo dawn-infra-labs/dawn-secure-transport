@@ -55,10 +55,10 @@ Each file has a specific purpose, described below.
 The `protocols/` directory contains all protocol‑related documentation, including:
 
 - **Rux Protocol Suite**  
-  ruxvv (Performance), ruxsv (Stealth), ruxpv (Survival), ruxte (All‑terrain)
+  ruxvv (Performance), ruxsv (Stealth), ruxpv (Survival).
 
 - **Source Protocols**  
-  REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5
+  REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS.
 
 - **Rust Unified Transport Layer (RUTL)**  
   The abstraction layer that unifies all transports under a consistent interface.
