@@ -70,14 +70,6 @@ Protocols that combine multiple source protocols into cohesive, full‑featured 
 
 ---
 
-## Extensions Protocol
-
-### **ruxte**
-- A protocol‑level extension built on the original TUIC v5 implementation, adding optional TCP fallback without modifying TUIC’s semantics  
-- A QUIC‑powered **“all‑terrain” transport engine**, suitable for a wide range of restricted network environments
-
----
-
 # 🏗 Rust Unified Transport Layer (RUTL)
 
 All protocols in the Rux Protocol Suite operate under the **Rust Unified Transport Layer (RUTL)** —  
