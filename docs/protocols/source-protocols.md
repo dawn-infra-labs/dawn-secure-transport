@@ -101,24 +101,6 @@ RUTL includes logic for **automatic fingerprint library updates** to mitigate Pa
 
 ---
 
-## 6. TUIC v5
-
-**Type:** QUIC‑based transport  
-**Strengths:**  
-- high‑speed performance  
-- resistant to throttling  
-- supports modern congestion control  
-
-**Limitations:**  
-- QUIC increasingly targeted by censorship  
-- requires fallback mechanisms in hostile environments  
-
-**Use Cases:**  
-- diverse constrained networks  
-- high‑performance routing with fallback options  
-
----
-
 ## Relationship to the Rux Protocol Suite
 
 The Rux Protocol Suite builds upon these Source Protocols by combining and extending them into unified transports:
