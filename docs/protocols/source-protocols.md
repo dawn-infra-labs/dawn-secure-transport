@@ -108,6 +108,5 @@ The Rux Protocol Suite builds upon these Source Protocols by combining and exten
 - **ruxvv (Performance):** REALITY + uTLS + XTLS‑Vision + VLESS  
 - **ruxsv (Stealth):** REALITY + uTLS + XHTTP (Stream) + VLESS  
 - **ruxpv (Survival):** REALITY + uTLS + XHTTP (Packet) + VLESS  
-- **ruxte (All‑terrain):** TUIC v5 with TCP fallback  
 
 By understanding the strengths and weaknesses of each Source Protocol, contributors can better evaluate the design choices and trade‑offs embodied in the Rux Suite.
