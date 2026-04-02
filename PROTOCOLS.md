@@ -89,7 +89,6 @@ Example logic:
 High‑risk region → ruxsv
 Medium‑risk region → ruxvv
 Extreme censorship → ruxpv
-Diverse constrained networks → ruxte
 ```
 
 ---
