@@ -46,7 +46,6 @@ Dawn Bridge Core incorporates several source protocols as foundational building 
 - XTLS‑Vision  
 - XHTTP  
 - VLESS  
-- TUIC v5  
 
 These protocols provide the raw mechanisms required for constructing higher‑level designs.  
 The project does not alter their semantics or implementation.
