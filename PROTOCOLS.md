@@ -2,7 +2,7 @@
 
 This document provides a high‑level overview of the protocols supported by Dawn Bridge Core.  
 
-For detailed specifications of the Rux Protocol Suite (ruxvv, ruxsv, ruxpv, ruxte), see `docs/protocols/`.
+For detailed specifications of the Rux Protocol Suite (ruxvv, ruxsv, ruxpv), see `docs/protocols/`.
 
 ---
 
