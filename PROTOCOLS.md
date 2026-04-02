@@ -8,7 +8,7 @@ For detailed specifications of the Rux Protocol Suite (ruxvv, ruxsv, ruxpv), see
 
 ## 1. Protocol Categories
 
-Dawn Bridge Core organizes protocols into three categories:
+Dawn Bridge Core organizes protocols into two categories:
 
 ### **Amalgamated Protocols**
 Unified, full‑featured transports created by combining multiple source protocols.
