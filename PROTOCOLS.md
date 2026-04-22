@@ -1,35 +1,35 @@
-# Dawn Bridge Core — Rux Protocol Suite Overview
+★  
 
-This document provides a high‑level overview of the protocols supported by Dawn Bridge Core.  
+# Dawnset — Rux Protocol Suite Overview
 
-For detailed specifications of the Rux Protocol Suite (ruxvv, ruxsv, ruxpv) and the Rust Unified Transport Layer (RUTL), see `docs/protocols/`.
+This document provides a high‑level overview of the protocols supported by **dawnset**.  
+
+For detailed specifications of the Rux Protocol Suite (**ruxvv, ruxsv, ruxpv**) and the **Rust Unified Transport Layer (RUTL)**, see `docs/protocols/`.
 
 ---
 
 ## 1. Protocol Categories
 
-Dawn Bridge Core organizes protocols into two categories:
+**dawnset** organizes protocols into two categories:
 
-### **Amalgamated Protocols**
-Unified, full‑featured transports created by combining multiple source protocols.
+### **Amalgamated Protocols**  
+Unified, full‑featured transports created by combining multiple source protocols into cohesive designs — not simple stacks, but carefully integrated systems that balance performance, concealment, and resilience.
 
-- **ruxvv (Performance)**  
+- **ruxvv (Performance‑oriented)**  
   REALITY + uTLS + XTLS‑Vision + VLESS
 
-- **ruxsv (Stealth)**  
+- **ruxsv (Stealth‑oriented)**  
   REALITY + uTLS + XHTTP (Stream) + VLESS
 
-- **ruxpv (Survival)**  
+- **ruxpv (Survival‑oriented)**  
   REALITY + uTLS + XHTTP (Packet) + VLESS
 
-### **Source Protocols**
+### **Source Protocols**  
 REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS.
 
 ---
 
 ## 2. Comparison (Source Protocols)
-
-The following table compares the Source Protocols.  
 
 | Protocol     | Type                | Strengths                          | Weaknesses |
 |--------------|---------------------|------------------------------------|------------|
@@ -41,12 +41,12 @@ The following table compares the Source Protocols.
 
 ---
 
-## 3. Rust Unified Transport Layer (RUTL)
+## 3. **Rust Unified Transport Layer (RUTL)**
 
 The **Rust Unified Transport Layer (RUTL)** is the central orchestrator that unifies Source Protocols, the Rux Protocol Suite, and additional full‑feature protocols (e.g., TUIC v5, Juicity).  
-It defines a consistent interface for transport behavior, enabling protocol interchangeability, AI‑driven dynamic routing, and multi‑path concurrency.
+It defines a consistent interface for transport behavior, enabling protocol interchangeability, heuristic routing, and multi‑path concurrency.
 
-RUTL provides:
+**RUTL** provides:
 
 - a unified handshake model  
 - consistent encryption and key schedule handling  
@@ -63,13 +63,14 @@ RUTL
   ├── Session Management
   └── Error Handling
 ```
+
 This orchestration ensures:
 
 - consistent behavior across all transports  
 - shared security guarantees  
 - simplified maintenance  
 - clean separation between protocol logic and application logic  
-- AI‑driven routing and adaptive protocol switching  
+- heuristic or reinforcement learning‑based routing and adaptive protocol switching  
 - multi‑path concurrency to generate chaotic traffic fingerprints  
 
 For detailed design notes and engineering considerations, see `docs/protocols/RUTL.md`.
@@ -78,10 +79,10 @@ For detailed design notes and engineering considerations, see `docs/protocols/RU
 
 ## 4. Protocol Selection Logic
 
-Dawn Bridge Core uses AI‑driven routing to select the optimal protocol based on:
+**dawnset** uses heuristic or reinforcement learning‑based routing to select the optimal protocol based on:
 
-- regional censorship intensity  
-- network conditions  
+- regional network restrictions  
+- connectivity conditions  
 - application type  
 - risk scoring  
 - historical performance  
@@ -89,9 +90,9 @@ Dawn Bridge Core uses AI‑driven routing to select the optimal protocol based o
 Example logic:
 
 ```
-High‑risk region → ruxsv
-Medium‑risk region → ruxvv
-Extreme censorship → ruxpv
+High‑risk region → ruxsv (Stealth‑oriented)
+Medium‑risk region → ruxvv (Performance‑oriented)
+Extreme network restrictions → ruxpv (Survival‑oriented)
 ```
 
 ---
@@ -102,14 +103,14 @@ Future additions will be integrated into the Rux Protocol Suite as either new Am
 
 Candidates under evaluation:
 
-- MASQUE (HTTP/3 proxying)
-- ECH‑based transports
-- PQC‑enhanced handshakes
-- additional uTLS variants
+- MASQUE (HTTP/3 proxying)  
+- ECH‑based transports  
+- PQC‑enhanced handshakes  
+- additional uTLS variants  
 
 Evaluation criteria:
 
-- censorship resilience  
+- resilience under restricted networks  
 - performance characteristics  
 - implementation complexity  
 - ecosystem maturity  
@@ -133,9 +134,11 @@ All protocols within the Rux Suite and Source Protocols must adhere to strict se
 
 When adding or modifying a protocol:
 
-- integrate with the Rust Unified Transport Layer (RUTL, see `docs/protocols/RUTL.md`)
+- integrate with the **Rust Unified Transport Layer (RUTL, see `docs/protocols/RUTL.md`)**  
 - document handshake behavior  
 - document fingerprinting risks  
 - include integration tests  
 - update routing logic  
-- ensure compatibility with AI‑driven selection
+- ensure compatibility with heuristic or reinforcement learning‑based selection  
+
+---
