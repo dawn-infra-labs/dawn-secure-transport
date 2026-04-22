@@ -1,4 +1,3 @@
-★  
 
 # Dawnset — Rux Protocol Suite Overview
 
