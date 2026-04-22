@@ -56,17 +56,17 @@ The project does not alter their semantics or implementation.
 
 ## Amalgamated Protocols
 
-### **ruxvv**  
+### **ruxvv (Performance‑oriented)**  
 - Amalgamates: REALITY + uTLS + XTLS‑Vision + VLESS  
 - Optimized for **high‑efficiency routing** across complex network paths  
 
-### **ruxsv**  
+### **ruxsv (Stealth‑oriented)**  
 - Amalgamates: REALITY + uTLS + XHTTP (Stream) + VLESS  
 - Optimized for **deep concealment** under restrictive connectivity conditions  
 
-### **ruxpv**  
+### **ruxpv (Survival‑oriented)**  
 - Amalgamates: REALITY + uTLS + XHTTP (Packet) + VLESS  
-- Optimized for **resilience in unreliable networks** by fragmenting traffic into discrete HTTP packets and eliminating long‑connection signatures  
+- Optimized for **resilience in unreliable networks** by fragmenting traffic into discrete HTTP packets and eliminating long‑connection signatures
 
 ---  
 
