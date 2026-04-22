@@ -1,45 +1,47 @@
-# Dawn Bridge Core
 
-**Modular, censorship‑resistant transport and routing core implemented in Rust.**
+# dawn-secure-transport (abbreviated as **dawnset**)
 
-Dawn Bridge Core provides a reusable foundation for building next‑generation circumvention systems, secure communication tools, and resilient transport layers.  
+**Modular, secure and privacy‑preserving transport and routing core implemented in Rust.**
+
+**dawnset** provides a reusable foundation for building next‑generation secure communication systems and resilient transport infrastructures.  
 It is designed as a modular, extensible, and high‑performance Rust workspace, offering:
 
 - A unified transport abstraction  
 - A suite of amalgamated and extended transport protocols  
 - Decentralized node discovery  
-- Intelligent routing for adversarial network environments  
+- Intelligent routing for challenging connectivity environments (restricted, unstable, filtered, or unreliable networks)  
 
 All components are released under the AGPLv3 license to maximize transparency, ecosystem contribution, and long‑term sustainability.
 
----
+---  
 
 # ✨ Key Capabilities
 
 - Modular Rust workspace with cleanly separated crates  
-- Rux Protocol Suite (**ruxsv, ruxvv, ruxpv**)
-- Rust Unified Transport Layer (RUTL): central orchestrator for all protocols, see `docs/protocols/RUTL.md`.
-- Zero‑cost abstractions enabling low memory overhead and high QPS performance under heavy concurrency  
-- Traffic obfuscation and DPI evasion  
+- Rux Protocol Suite (**ruxsv, ruxvv, ruxpv**)  
+- **Rust Unified Transport Layer (RUTL):** central orchestrator for all protocols, see `docs/protocols/RUTL.md`  
+- Zero‑cost abstractions enabling low memory overhead and high queries‑per‑second (QPS) performance under heavy concurrency  
+- Traffic concealment and adaptive transport resilience  
 - Decentralized node discovery (DHT + DNS TXT)  
 - AI‑driven routing engine with multi‑hop support  
 - Secure handshake and key‑management primitives  
 - Designed for integration into VPNs, proxies, and decentralized communication systems  
 
----
+---  
 
 # 🚀 Rux Protocol Suite
 
-The Rux Protocol Suite is Dawn Bridge Core’s primary contribution:  
-a set of Rust‑based transport protocols built through amalgamation and protocol‑level extension.
+The Rux Protocol Suite is **dawnset**’s primary contribution:  
+a set of Rust‑based transport protocols built through amalgamation and protocol‑level extension.  
+These protocols are designed as cohesive, full‑featured transports — not simple stacks of components, but carefully integrated designs that balance performance, concealment, and resilience.
 
 For detailed specifications, protocol diagrams, and behavioral notes, see the documentation in the `docs/` directory.
 
----
+---  
 
 ## Source Protocols
 
-Dawn Bridge Core incorporates several source protocols as foundational building blocks:
+**dawnset** incorporates several source protocols as foundational building blocks:
 
 - REALITY  
 - uTLS  
@@ -50,27 +52,25 @@ Dawn Bridge Core incorporates several source protocols as foundational building 
 These protocols provide the raw mechanisms required for constructing higher‑level designs.  
 The project does not alter their semantics or implementation.
 
----
+---  
 
 ## Amalgamated Protocols
 
-Protocols that combine multiple source protocols into cohesive, full‑featured transports.
-
-### **ruxvv**
+### **ruxvv**  
 - Amalgamates: REALITY + uTLS + XTLS‑Vision + VLESS  
-- A full‑capability proxy, encryption, transport, and obfuscation protocol — the **“performance edition”**, optimized for **high‑efficiency traversal** across complex network paths
+- Optimized for **high‑efficiency routing** across complex network paths  
 
-### **ruxsv**
+### **ruxsv**  
 - Amalgamates: REALITY + uTLS + XHTTP (Stream) + VLESS  
-- A full‑capability proxy, encryption, transport, and obfuscation protocol — the **“stealth edition”**, optimized for **deep concealment** under strict censorship
+- Optimized for **deep concealment** under restrictive connectivity conditions  
 
-### **ruxpv**
+### **ruxpv**  
 - Amalgamates: REALITY + uTLS + XHTTP (Packet) + VLESS  
-- A full‑capability proxy, encryption, transport, and obfuscation protocol — the **“Survival edition”**, optimized for **resilience under extreme censorship** by fragmenting traffic into discrete HTTP packets and eliminating long‑connection signatures.
+- Optimized for **resilience in unreliable networks** by fragmenting traffic into discrete HTTP packets and eliminating long‑connection signatures  
 
----
+---  
 
-# 🏗 Rust Unified Transport Layer (RUTL)
+# 🏗 **Rust Unified Transport Layer (RUTL)**
 
 All protocols in the Rux Protocol Suite operate under the **Rust Unified Transport Layer (RUTL)** —  
 a shared abstraction that provides:
@@ -82,41 +82,42 @@ a shared abstraction that provides:
 - Extensible transport pipeline  
 - Common handshake and routing interfaces  
 
-RUTL is the architectural foundation and central orchestrator that enables the suite to function as a coherent system.  
+**RUTL** is the architectural foundation and central orchestrator that enables the suite to function as a coherent system.  
 It provides AI‑driven routing, multi‑path concurrency, and protocol management.  
 For detailed design notes and engineering considerations, see `docs/protocols/RUTL.md`.
 
----
+---  
 
 # 🧩 Architecture Overview
 
-Dawn Bridge Core is organized into three major modules:
+**dawnset** is organized into three major modules:
 
----
+---  
 
 ## A. Decentralized Node Discovery (DHT + DNS TXT)
 
-Implements a censorship‑resistant node distribution system using a structured DHT and DNS TXT records.
+Implements a resilient node distribution system using a structured DHT and DNS TXT records.  
+This decentralized mechanism prevents single‑point failures and ensures that directory servers cannot be easily blocked, strengthening resistance against network restrictions.
 
 Capabilities include:
 
 - Multi‑source node discovery  
 - Remote configuration and policy delivery  
 - Node prioritization and scoring  
-- Dynamic updates under censorship pressure  
+- Dynamic updates under adverse network conditions  
 
----
+---  
 
 ## B. Transport Layer: Rux Protocol Suite
 
 The transport subsystem includes:
 
 - **ruxvv**  
-- **ruxsv**
-- **ruxpv**
-- **RUTL unified abstraction layer (see `docs/protocols/RUTL.md` for details)**
+- **ruxsv**  
+- **ruxpv**  
+- **RUTL unified abstraction layer (see `docs/protocols/RUTL.md` for details)**  
 
----
+---  
 
 ## C. AI‑Driven Routing Engine
 
@@ -125,7 +126,7 @@ Optimizes path selection based on:
 - Success rate  
 - Latency  
 - Load  
-- Censorship risk  
+- Risk factors in restricted or unstable networks  
 - Historical performance  
 
 Supports:
@@ -135,14 +136,15 @@ Supports:
 - Adaptive fallback  
 - Risk‑aware path selection  
 
+The “AI‑driven” routing engine is implemented through lightweight heuristic algorithms and reinforcement learning models, ensuring practical deployment even on low‑power devices.  
 Detailed architecture documents are available in the `architecture/` directory.
 
----
+---  
 
 # 📁 Repository Structure
 
 ```
-dawn-bridge-core/
+dawnset/
 │
 ├── .github/         — GitHub workflows, CI configuration, and repository automation
 ├── architecture/    — High‑level system architecture, data‑flow diagrams, and threat models
@@ -161,11 +163,11 @@ dawn-bridge-core/
 └── README.md
 ```
 
----
+---  
 
 # 🔒 Security & Threat Model
 
-Dawn Bridge Core is designed for adversarial environments involving:
+**dawnset** is designed for adverse environments involving:
 
 - IP blocking  
 - Protocol fingerprinting  
@@ -177,68 +179,68 @@ Dawn Bridge Core is designed for adversarial environments involving:
 The architecture emphasizes:
 
 - Protocol agility  
-- Transport obfuscation  
+- Transport concealment  
 - Decentralized discovery  
 - Multi‑hop routing  
 - Minimal metadata exposure  
 
 A full threat model is documented in `architecture/threat-model.md`.
 
----
+---  
 
 # 🚀 Roadmap
 
-### Phase 1 — Core Architecture (MVP)
+### Phase 1 — Core Architecture (MVP)  
 - Modular workspace  
 - Transport stubs  
 - Basic DHT discovery  
 - Secure primitives  
 
-### Phase 2 — Distributed Node Network
+### Phase 2 — Distributed Node Network  
 - Multi‑source discovery  
 - Remote policy delivery  
 - Automatic node updates  
 
-### Phase 3 — AI Routing Engine
+### Phase 3 — AI Routing Engine  
 - Multi‑hop routing  
 - Risk‑aware path selection  
 - Per‑application routing  
 
-### Phase 4 — Future Extensions
+### Phase 4 — Future Extensions  
 - Post‑quantum cryptography (PQC) integration  
-- Additional censorship‑resistant transport protocols  
+- Additional resilient transport protocols  
 
 Full details are in the `roadmap/` directory.
 
----
+---  
 
 # 🔮 Future Extensions
 
 The architecture is designed with modular cryptographic interfaces, allowing PQC algorithms to be added in future phases without breaking compatibility.
 
-Similarly, the transport framework is intentionally pluggable, enabling additional censorship‑resistant protocols to be integrated as they emerge.
+Similarly, the transport framework is intentionally pluggable, enabling additional secure transport protocols to be integrated as they emerge.
 
 These extensions will be added in future development cycles under the same AGPLv3 license.
 
----
+---  
 
 # 📜 License
 
 This project is licensed under AGPLv3.  
-All modules developed in this repository will remain open and reusable for the circumvention ecosystem.
+All modules developed in this repository will remain open and reusable for the secure communication ecosystem.
 
----
+---  
 
 # 🤝 Contributing
 
 Contributions are welcome.  
 A `CONTRIBUTING.md` file will be added in a future update.
 
----
+---  
 
 # 🌐 Why This Matters
 
-Modern censorship systems increasingly rely on:
+Modern network control systems increasingly rely on:
 
 - IP + SNI blocking  
 - TLS fingerprinting  
@@ -246,7 +248,10 @@ Modern censorship systems increasingly rely on:
 - Traffic classification  
 - Protocol‑level heuristics  
 
-Dawn Bridge Core provides a flexible, modular, and future‑proof foundation for building tools that can adapt to evolving adversarial environments.
+**dawnset** provides a flexible, modular, and future‑proof foundation for building tools that can adapt to evolving connectivity challenges.  
+Its crate structure allows developers to integrate individual components — such as cryptographic primitives or discovery modules — without adopting the entire framework, ensuring interoperability across diverse projects.
 
 It is not a VPN or a product by itself —  
-it is infrastructure for the next generation of censorship‑resistant systems.
+it is infrastructure for the next generation of secure and privacy‑preserving communication systems.
+
+---  
