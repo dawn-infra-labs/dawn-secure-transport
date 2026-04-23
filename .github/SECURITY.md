@@ -2,11 +2,11 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in Dawn Bridge Core:
+If you discover a security vulnerability in dawn-secure-transport:
 
 - Do **not** open a public issue.
 - Please report it privately using **GitHub Security Advisories**:
-  https://github.com/dawn-bridge-labs/dawn-bridge-core/security/advisories/new
+  https://github.com/dawn-infra-labs/dawn-secure-transport/security/advisories/new
 
 This ensures the report is handled confidentially and safely.
 
@@ -28,11 +28,11 @@ We follow responsible disclosure practices:
 
 This policy applies to:
 
-- Dawn Bridge Core (all crates)
+- dawn-secure-transport (all crates)
 - Documentation and specifications that impact security
 - Build scripts and CI workflows
 
 It does **not** apply to:
 
 - Third‑party dependencies
-- External services or infrastructure not maintained by Dawn Bridge Labs
+- External services or infrastructure not maintained by dawn-infra-labs
