@@ -1,7 +1,7 @@
 # AI Routing Architecture
 
-The AI Routing Engine is responsible for intelligent, adaptive, and censorship‑resistant path selection within Dawn Bridge Core.  
-It evaluates network conditions, censorship risk, application behavior, and transport performance to determine the optimal routing strategy for each connection.
+The AI Routing Engine leverages multi-factor heuristic weighting and lightweight reinforcement learning to provide adaptive, and privacy‑preserving path selection within **dawnset**.  
+It evaluates network conditions, application behavior, and transport performance to determine the optimal routing strategy for each connection in **challenging connectivity environments (restricted, unstable, filtered, or unreliable networks)**.
 
 This module integrates tightly with the transport framework and node discovery system, forming the decision‑making layer of the entire architecture.
 
@@ -9,7 +9,7 @@ This module integrates tightly with the transport framework and node discovery s
 
 ## Background
 
-Modern censorship systems employ dynamic blocking strategies, including:
+Modern connectivity challenges include dynamic blocking strategies such as:
 
 - protocol fingerprinting  
 - active probing  
@@ -17,10 +17,10 @@ Modern censorship systems employ dynamic blocking strategies, including:
 - application‑level traffic classification  
 - behavioral analysis  
 
-Static routing strategies cannot survive in such environments.  
-A resilient circumvention system must adapt continuously, learning from failures and adjusting routing decisions in real time.
+Static routing strategies cannot remain reliable in such environments.  
+A resilient communication system must adapt continuously, learning from failures and adjusting routing decisions in real time.
 
-The AI Routing Engine provides this adaptability.
+The Intelligent Routing Engine provides this adaptability.
 
 ---
 
@@ -29,18 +29,18 @@ The AI Routing Engine provides this adaptability.
 The routing engine is designed to:
 
 - maximize connection success rate  
-- minimize censorship detection  
+- minimize detection risk  
 - optimize latency and throughput  
 - dynamically select the best transport protocol  
 - support multi‑hop routing for high‑risk scenarios  
 - automatically determine which applications require proxying  
-- learn from historical performance and adapt over time  
+- apply probabilistic decision models (such as Multi-Armed Bandit) to learn from historical performance and optimize the exploration-exploitation balance over time  
 
 ---
 
 ## Architecture Overview
 
-The AI Routing Engine consists of four major components:
+The Intelligent Routing Engine consists of four major components:
 
 ### 1. Application Classifier
 Identifies the originating application or traffic type using:
@@ -60,10 +60,13 @@ Assigns a risk score to each connection based on:
 
 - application sensitivity  
 - destination domain/IP  
-- censorship history  
+- connectivity history  
 - protocol detectability  
-- regional blocking patterns  
+- regional filtering patterns  
 - user‑defined policies  
+
+This engine utilizes a heuristic scoring algorithm that processes real-time network telemetry.  
+It calculates a dynamic risk coefficient by weighing factors such as protocol-specific entropy and handshake success rates.
 
 Risk scores influence:
 
@@ -85,11 +88,11 @@ Chooses the optimal transport protocol from:
 
 Selection is based on:
 
-- censorship risk  
+- connectivity risk  
 - bandwidth requirements  
 - latency sensitivity  
 - historical success rate  
-- active probing resistance  
+- probing resistance  
 
 ---
 
@@ -108,10 +111,10 @@ It integrates with the node discovery system to obtain fresh node lists and perf
 
 ## Per‑Application Routing
 
-The AI Routing Engine automatically determines **which applications should use the proxy and which should not**.
+The Intelligent Routing Engine automatically determines **which applications should use the proxy and which should not**.
 
 ### Why this is necessary
-- Sensitive apps (e.g., Telegram, Signal) must always use proxy  
+- Sensitive apps (e.g., messaging platforms) must always use proxy  
 - Local apps (e.g., banking, payments) must never use proxy  
 - Some apps require dynamic decisions based on server location  
 - Reduces unnecessary load on the proxy network  
@@ -130,11 +133,11 @@ The engine evaluates:
 ### Decision outcomes
 - **Force Proxy**  
 - **Force Direct**  
-- **Dynamic (AI decides per connection)**  
+- **Dynamic (heuristic/reinforcement model decides per connection)**  
 - **Protocol‑specific routing**  
 - **Multi‑hop enforcement for high‑risk apps**  
 
-This capability is essential for both performance and censorship resistance.
+This capability is essential for both performance and resilience.
 
 ---
 
@@ -171,7 +174,7 @@ Each layer contributes to the final routing decision.
 
 ## Extensibility
 
-The AI Routing Engine is designed to support:
+The Intelligent Routing Engine is designed to support:
 
 - new transport protocols  
 - new risk models  
@@ -189,8 +192,8 @@ The architecture ensures future growth without breaking compatibility.
 Planned enhancements include:
 
 - integration with PQC‑ready transports  
-- reinforcement learning‑based routing  
+- On-device reinforcement learning: Integrating lightweight agents for real-time edge decision-making without cloud dependency  
 - collaborative (privacy‑preserving) performance sharing  
 - advanced anomaly detection  
 - per‑domain routing policies  
-- predictive censorship modeling
+- predictive connectivity modeling
