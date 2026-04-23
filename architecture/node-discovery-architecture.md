@@ -5,7 +5,7 @@
 The node discovery subsystem provides resilient distribution of node information.  
 It ensures that clients can obtain fresh, reliable, and tamper‑resistant endpoint data even under active access restrictions, DNS poisoning, or regional network interference.
 
-**dawnset** uses a multi‑channel discovery strategy combining:
+**Dawnset** uses a multi‑channel discovery strategy combining:
 
 - Distributed Hash Table (DHT)  
 - DNS TXT‑based fallback  
