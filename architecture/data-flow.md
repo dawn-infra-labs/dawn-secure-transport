@@ -1,21 +1,21 @@
 # Data Flow Architecture
 
-This document describes the end‑to‑end data flow inside Dawn Bridge Core, including handshake sequences, routing decisions, encryption layers, and multi-hop forwarding behavior.  
+This document describes the end‑to‑end data flow inside **dawnset**, including handshake sequences, routing decisions, encryption layers, and multi‑hop forwarding behavior.  
 It provides a unified view of how packets move through the system across all transports and routing layers.
 
 ---
 
-## 1. High-Level Overview
+## 1. High‑Level Overview
 
-Dawn Bridge Core processes data through five major stages:
+**dawnset** processes data through five major stages:
 
 1. **Session Initialization**  
 2. **Handshake & Key Exchange**  
 3. **Route Selection**  
-4. **Multi-Hop Forwarding**  
+4. **Multi‑Hop Forwarding**  
 5. **Response Path & Session Rotation**
 
-Each stage is transport-agnostic and applies to all protocols (`REALITY`, `uTLS`, `XTLS‑Vision`, `XHTTP`, `VLESS`, `TUIC v5`).
+Each stage is transport‑agnostic and applies to all protocols (`REALITY`, `uTLS`, `XTLS‑Vision`, `XHTTP`, `VLESS`, `TUIC v5`).
 
 ---
 
@@ -76,24 +76,26 @@ Inputs include:
 
 The engine outputs:
 
-- A multi-hop path  
-- Per-hop encryption keys  
+- A multi‑hop path  
+- Per‑hop encryption keys  
 - Expected rotation interval  
 
 ### 4.2 Route Descriptor
 
-    RouteDescriptor {
-        hops: [node1, node2, node3, ...]
-        per_hop_keys: [...]
-        risk_score: int
-        rotation_after: duration
-    }
+```
+RouteDescriptor {
+    hops: [node1, node2, node3, ...]
+    per_hop_keys: [...]
+    risk_score: int
+    rotation_after: duration
+}
+```
 
 This descriptor is encrypted and sent to the first hop only.
 
 ---
 
-## 5. Multi-Hop Forwarding
+## 5. Multi‑Hop Forwarding
 
 ### 5.1 Onion Encryption
 
@@ -101,7 +103,7 @@ Each hop receives only:
 
 - The encrypted payload  
 - The next hop address  
-- A per-hop decryption key  
+- A per‑hop decryption key  
 
 No hop can see both source and destination.
 
@@ -138,12 +140,12 @@ This ensures symmetric anonymity.
 
 ## 7. Session Rotation
 
-To prevent long-term correlation:
+To prevent long‑term correlation:
 
 - Keys rotate periodically (`rotation_interval = 30 minutes`)  
 - Routes rotate based on risk score  
-- Transport sessions may re-handshake  
-- Node selection may change mid-session  
+- Transport sessions may re‑handshake  
+- Node selection may change mid‑session  
 
 Rotation is transparent to the user and does not break connections.
 
@@ -174,15 +176,15 @@ If a node shows anomalies:
 
 ---
 
-## 9. End-to-End Flow Summary
+## 9. End‑to‑End Flow Summary
 
 1. Client initializes session  
 2. Hybrid handshake establishes secure channel  
-3. AI routing engine selects multi-hop path  
+3. AI routing engine selects multi‑hop path  
 4. Client applies onion encryption  
 5. Traffic flows through hops  
 6. Responses return through reverse onion layers  
 7. Keys and routes rotate periodically  
 8. Failures trigger seamless rerouting  
 
-This architecture ensures confidentiality, unlinkability, and resilience against active and passive adversaries.
+This architecture ensures confidentiality, unlinkability, and resilience in **challenging connectivity environments (restricted, unstable, filtered, or unreliable networks)**.
