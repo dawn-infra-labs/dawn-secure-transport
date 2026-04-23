@@ -1,5 +1,5 @@
 name: Feature Request
-description: Propose a new feature or enhancement for **dawnset**
+description: Propose a new feature or enhancement for **dawnset**  
 labels: [enhancement]
 body:
   - type: textarea
