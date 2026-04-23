@@ -1,4 +1,4 @@
-✦ # Crypto Architecture & Future Extensions
+# Crypto Architecture & Future Extensions
 
 This document describes **dawnset**’s cryptographic foundations, post‑quantum readiness, hybrid key exchange strategy, and the extension framework that allows the system to adopt new protocols and cryptographic primitives without breaking backward compatibility.
 
