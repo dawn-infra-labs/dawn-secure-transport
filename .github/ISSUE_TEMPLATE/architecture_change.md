@@ -1,5 +1,5 @@
 name: Architecture Change Proposal
-description: Propose a change to Dawn Bridge Core architecture
+description: Propose a change to **dawnset** architecture
 labels: [architecture]
 body:
   - type: textarea
