@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a bug in Dawn Bridge Core
+description: Report a bug in **dawnset**
 labels: [bug]
 body:
   - type: textarea
@@ -52,4 +52,4 @@ body:
     attributes:
       label: Logs / Output
       description: Paste any relevant logs or error messages.
-      render: shel
+      render: shell
