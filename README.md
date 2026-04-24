@@ -1,9 +1,9 @@
 
-# dawn-secure-transport (abbreviated as **dawnset**)
+# Dawn-Secure-Transport (abbreviated as **Dawnset**)
 
 **Modular, secure and privacy‑preserving transport and routing core implemented in Rust.**
 
-**dawnset** provides a reusable foundation for building next‑generation secure communication systems and resilient transport infrastructures.  
+**Dawnset** provides a reusable foundation for building next‑generation secure communication systems and resilient transport infrastructures.  
 It is designed as a modular, extensible, and high‑performance Rust workspace, offering:
 
 - A unified transport abstraction  
