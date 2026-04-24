@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 license = "AGPL-3.0"
 authors = ["Dawn Infra Labs"]
-description = "Unified transport framework and protocol implementations for Dawnset."
+description = "Amalgamated Protocol implementations for the Rust Unified Transport Layer (RUTL)."
 
 [dependencies]
 tokio = { workspace = true }
