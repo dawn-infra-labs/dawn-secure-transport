@@ -128,14 +128,13 @@ The transport layer provides protocol agility and endpoint stealth. It is built 
 All transports implement a common API, enabling seamless switching and fallback.
 
 ### Supported Transport Types  
-**Dawnset** currently supports six primary transport protocols, with future‑proofing for post‑quantum cryptography:
+**Dawnset** currently supports five primary transport protocols, with future‑proofing for post‑quantum cryptography:
 
 - **REALITY** — modern layer designed for authentication integrity and endpoint stealth  
 - **uTLS** — TLS fingerprint adaptation layer that mimics real‑world client behavior  
 - **XTLS‑Vision** — encrypted transport with advanced fingerprint resistance  
 - **XHTTP** — lightweight, resilient HTTP‑based transport  
-- **VLESS** — flexible, metadata‑minimal transport for multi‑hop routing  
-- **TUIC v5** — QUIC‑based transport with PQC‑ready handshake  
+- **VLESS** — flexible, metadata‑minimal transport for multi‑hop routing    
 
 ### PQC‑Ready Transports  
 Future support for post‑quantum key exchange and hybrid cryptographic handshakes.
