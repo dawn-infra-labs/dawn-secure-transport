@@ -1,7 +1,10 @@
 [package]
-name = "dawn-crypto"
+name = "dawnset-crypto"
 version = "0.1.0"
 edition = "2021"
+license = "AGPL-3.0"
+authors = ["Dawn Infra Labs"]
+description = "Cryptographic primitives, key exchange, and PQC-ready components for Dawnset."
 
 [dependencies]
 ring = "0.17"
