@@ -15,7 +15,7 @@ It provides a unified view of how packets move through the system across all tra
 4. **Multi‑Hop Forwarding**  
 5. **Response Path & Session Rotation**
 
-Each stage is transport‑agnostic and applies to all protocols (`REALITY`, `uTLS`, `XTLS‑Vision`, `XHTTP`, `VLESS`, `TUIC v5`).
+Each stage is transport‑agnostic and applies to all protocols (`REALITY`, `uTLS`, `XTLS‑Vision`, `XHTTP`, `VLESS`).
 
 ---
 
