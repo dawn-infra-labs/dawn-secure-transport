@@ -68,6 +68,8 @@ Dawnset uses the following source protocols as internal building blocks:
 - XHTTP  
 - VLESS  
 
+The reference implementations of these source protocols are primarily written in Go.
+
 These are not exposed directly to the routing engine.  
 They are used exclusively during the **amalgamation process** to construct the Amalgamated Protocols.
 
