@@ -1,92 +1,118 @@
+# Dawnset — Protocol Architecture Overview
 
-# Dawnset — Rux Protocol Suite Overview
+This document provides a high‑level overview of the protocol architecture used in **Dawnset**.  
+It first introduces the **Rust Unified Transport Layer (RUTL)** as the first core,  
+then describes the **Amalgamated Protocols** and the **Source Protocols** they are built from.
 
-This document provides a high‑level overview of the protocols supported by **dawnset**.  
-
-For detailed specifications of the Rux Protocol Suite (**ruxvv, ruxsv, ruxpv**) and the **Rust Unified Transport Layer (RUTL)**, see `docs/protocols/`.
-
----
-
-## 1. Protocol Categories
-
-**dawnset** organizes protocols into two categories:
-
-### **Amalgamated Protocols**  
-Unified, full‑featured transports created by combining multiple source protocols into cohesive designs — not simple stacks, but carefully integrated systems that balance performance, concealment, and resilience.
-
-- **ruxvv (Performance‑oriented)**  
-  REALITY + uTLS + XTLS‑Vision + VLESS
-
-- **ruxsv (Stealth‑oriented)**  
-  REALITY + uTLS + XHTTP (Stream) + VLESS
-
-- **ruxpv (Survival‑oriented)**  
-  REALITY + uTLS + XHTTP (Packet) + VLESS
-
-### **Source Protocols**  
-REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS.
+For detailed specifications, see `architecture/` and `docs/protocols/`.
 
 ---
 
-## 2. Comparison (Source Protocols)
+# 1. Rust Unified Transport Layer (RUTL)
 
-| Protocol     | Type                | Strengths                          | Weaknesses |
-|--------------|---------------------|------------------------------------|------------|
-| REALITY      | TLS mimicry         | indistinguishable from HTTPS        | complex config |
-| uTLS         | TLS fingerprinting  | Chrome‑like handshake behavior      | requires tuning |
-| XTLS‑Vision  | TCP obfuscation     | high performance, low overhead      | fingerprintable if misused |
-| XHTTP        | HTTP camouflage     | blends into normal web traffic      | moderate overhead |
-| VLESS        | lightweight         | simple, flexible, low metadata      | requires obfuscation layer |
+The **Rust Unified Transport Layer (RUTL)** is Dawnset’s **first core**.  
+It defines the unified abstraction that all transports in Dawnset must implement.
 
----
+RUTL provides:
 
-## 3. **Rust Unified Transport Layer (RUTL)**
+- unified connection lifecycle  
+- shared error and capability model  
+- consistent configuration interface  
+- extensible transport pipeline  
+- handshake and routing boundaries  
+- integration point for AI‑driven routing and multi‑path concurrency  
 
-The **Rust Unified Transport Layer (RUTL)** is the central orchestrator that unifies Source Protocols, the Rux Protocol Suite, and additional full‑feature protocols (e.g., TUIC v5, Juicity).  
-It defines a consistent interface for transport behavior, enabling protocol interchangeability, heuristic routing, and multi‑path concurrency.
-
-**RUTL** provides:
-
-- a unified handshake model  
-- consistent encryption and key schedule handling  
-- shared obfuscation and camouflage primitives  
-- session lifecycle management  
-- transport‑agnostic error semantics  
-- a stable API surface for contributors and extensions  
-
-```
-RUTL
-  ├── Handshake
-  ├── Encryption
-  ├── Obfuscation
-  ├── Session Management
-  └── Error Handling
-```
-
-This orchestration ensures:
+RUTL ensures:
 
 - consistent behavior across all transports  
 - shared security guarantees  
-- simplified maintenance  
 - clean separation between protocol logic and application logic  
-- heuristic or reinforcement learning‑based routing and adaptive protocol switching  
-- multi‑path concurrency to generate chaotic traffic fingerprints  
+- predictable integration for contributors and extensions  
 
-For detailed design notes and engineering considerations, see `docs/protocols/RUTL.md`.
+### RUTL is not a closed system
+
+Although Dawnset ships with its own Amalgamated Protocols,  
+**RUTL is designed to support any transport protocol that provides a complete structure**, including:
+
+- a well‑defined handshake  
+- encryption and key schedule  
+- session lifecycle  
+- error semantics  
+- framing or packetization rules  
+
+Such protocols can be implemented as **RUTL‑compatible transports**,  
+allowing Dawnset to integrate additional full‑feature protocols without modifying the core.
+
+For detailed specifications, see `architecture/rutl.md`.
 
 ---
 
-## 4. Protocol Selection Logic
+# 2. Protocol categories
 
-**dawnset** uses heuristic or reinforcement learning‑based routing to select the optimal protocol based on:
+On top of RUTL, Dawnset’s transport system is organized into two protocol categories:
 
-- regional network restrictions  
-- connectivity conditions  
-- application type  
-- risk scoring  
-- historical performance  
+1. **Amalgamated Protocols**  
+   Full transports engineered by fusing multiple Source Protocols into a single, integrated design.  
+   These are the protocols that the routing engine selects and operates on directly.
 
-Example logic:
+2. **Source Protocols**  
+   Internal building blocks that provide handshake, camouflage, and framing behavior.  
+   They are not exposed directly to applications or routing decisions, but are used during fusion.
+
+This separation keeps RUTL as the stable core,  
+while allowing protocol behavior to evolve through new Amalgamated Protocols and Source Protocol combinations.
+
+---
+
+# 3. Amalgamated Protocols
+
+Dawnset defines three **Amalgamated Protocols**, each engineered by  
+**fusing multiple Source Protocols into a single, integrated transport design**.  
+These are not simple stacks; the components are tightly integrated at the RUTL layer.
+
+### **ruxvv — Performance‑oriented Amalgamated Protocol**  
+A performance‑oriented amalgamated protocol built from the following internal components:  
+REALITY, uTLS, XTLS‑Vision, VLESS.  
+Optimized for high‑efficiency routing and stable throughput.
+
+### **ruxsv — Stealth‑oriented Amalgamated Protocol**  
+A stealth‑oriented amalgamated protocol built from the following internal components:  
+REALITY, uTLS, XHTTP (Stream), VLESS.  
+Optimized for concealment in restrictive connectivity environments.
+
+### **ruxpv — Survival‑oriented Amalgamated Protocol**  
+A survival‑oriented amalgamated protocol built from the following internal components:  
+REALITY, uTLS, XHTTP (Packet), VLESS.  
+Optimized for resilience under unstable, filtered, or unreliable networks.
+
+These descriptions are provided to help understand the lineage of each protocol.  
+The actual implementations are **fully integrated designs** built on top of RUTL.
+
+---
+
+# 4. Source Protocols
+
+Source Protocols are **internal building blocks** used during the construction of  
+Amalgamated Protocols. They are **not exposed directly** to the routing engine  
+or external interfaces.
+
+- **REALITY** — TLS camouflage  
+- **uTLS** — TLS fingerprint mimicry  
+- **XTLS‑Vision** — high‑performance obfuscation  
+- **XHTTP (Stream / Packet)** — HTTP‑based stream and packet camouflage  
+- **VLESS** — lightweight session framing
+
+These components provide handshake primitives, camouflage behavior, and transport semantics  
+that are fused into the Amalgamated Protocols.
+
+---
+
+# 5. Protocol selection logic
+
+Dawnset’s routing engine selects the appropriate Amalgamated Protocol based on  
+connectivity conditions and risk scoring.
+
+Example conceptual logic:
 
 ```
 High‑risk region → ruxsv (Stealth‑oriented)
@@ -94,50 +120,50 @@ Medium‑risk region → ruxvv (Performance‑oriented)
 Extreme network restrictions → ruxpv (Survival‑oriented)
 ```
 
+This logic is implemented through Dawnset’s AI‑driven routing engine,  
+not through static rules.
+
 ---
 
-## 5. Future Protocols (Planned)
+# 6. Future extensions
 
-Future additions will be integrated into the Rux Protocol Suite as either new Amalgamated or Extension protocols.
+Future protocol extensions may be added as **RUTL‑compatible transports**,  
+not as external protocol stacks.
 
-Candidates under evaluation:
+Areas under evaluation include:
 
-- MASQUE (HTTP/3 proxying)  
-- ECH‑based transports  
-- PQC‑enhanced handshakes  
+- MASQUE‑based transports  
+- ECH‑assisted handshake concealment  
+- PQC‑enhanced key exchange  
 - additional uTLS variants  
 
-Evaluation criteria:
-
-- resilience under restricted networks  
-- performance characteristics  
-- implementation complexity  
-- ecosystem maturity  
+All future additions must integrate cleanly with RUTL  
+and follow Dawnset’s security and concealment principles.
 
 ---
 
-## 6. Security Notes
+# 7. Security principles
 
-All protocols within the Rux Suite and Source Protocols must adhere to strict security principles:
+All protocols within Dawnset must adhere to strict security requirements:
 
 - minimize metadata leakage  
-- ensure precise mimicry and handshake fidelity  
-- fail closed under active probing  
+- maintain handshake fidelity  
+- resist active probing  
 - apply padding and timing jitter  
 - avoid distinguishable flow patterns  
 - maintain protocol‑consistent error behavior  
 
 ---
 
-## 7. Contribution Notes
+# 8. Contribution notes
 
 When adding or modifying a protocol:
 
-- integrate with the **Rust Unified Transport Layer (RUTL, see `docs/protocols/RUTL.md`)**  
+- integrate with **RUTL**  
 - document handshake behavior  
-- document fingerprinting risks  
+- document fingerprinting considerations  
 - include integration tests  
-- update routing logic  
-- ensure compatibility with heuristic or reinforcement learning‑based selection  
+- update routing logic if applicable  
+- ensure compatibility with Dawnset’s concealment and resilience goals  
 
 ---
