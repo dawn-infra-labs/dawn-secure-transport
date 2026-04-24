@@ -41,7 +41,7 @@ For detailed specifications, protocol diagrams, and behavioral notes, see the do
 
 ## Source Protocols
 
-**dawnset** incorporates several source protocols as foundational building blocks:
+**Dawnset** incorporates several source protocols as foundational building blocks:
 
 - REALITY  
 - uTLS  
@@ -56,15 +56,15 @@ The project does not alter their semantics or implementation.
 
 ## Amalgamated Protocols
 
-### **ruxvv (Performance‑oriented)**  
+### **Ruxvv (Performance‑oriented)**  
 - Amalgamates: REALITY + uTLS + XTLS‑Vision + VLESS  
 - Optimized for **high‑efficiency routing** across complex network paths  
 
-### **ruxsv (Stealth‑oriented)**  
+### **Ruxsv (Stealth‑oriented)**  
 - Amalgamates: REALITY + uTLS + XHTTP (Stream) + VLESS  
 - Optimized for **deep concealment** under restrictive connectivity conditions  
 
-### **ruxpv (Survival‑oriented)**  
+### **Ruxpv (Survival‑oriented)**  
 - Amalgamates: REALITY + uTLS + XHTTP (Packet) + VLESS  
 - Optimized for **resilience in unreliable networks** by fragmenting traffic into discrete HTTP packets and eliminating long‑connection signatures
 
@@ -90,7 +90,7 @@ For detailed design notes and engineering considerations, see `docs/protocols/RU
 
 # 🧩 Architecture Overview
 
-**dawnset** is organized into three major modules:
+**Dawnset** is organized into three major modules:
 
 ---  
 
@@ -167,7 +167,7 @@ dawnset/
 
 # 🔒 Security & Threat Model
 
-**dawnset** is designed for adverse environments involving:
+**Dawnset** is designed for adverse environments involving:
 
 - IP blocking  
 - Protocol fingerprinting  
@@ -248,7 +248,7 @@ Modern network control systems increasingly rely on:
 - Traffic classification  
 - Protocol‑level heuristics  
 
-**dawnset** provides a flexible, modular, and future‑proof foundation for building tools that can adapt to evolving connectivity challenges.  
+**Dawnset** provides a flexible, modular, and future‑proof foundation for building tools that can adapt to evolving connectivity challenges.  
 Its crate structure allows developers to integrate individual components — such as cryptographic primitives or discovery modules — without adopting the entire framework, ensuring interoperability across diverse projects.
 
 It is not a VPN or a product by itself —  
