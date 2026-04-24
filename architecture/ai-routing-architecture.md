@@ -84,7 +84,6 @@ Chooses the optimal transport protocol from:
 - XTLS‑Vision  
 - XHTTP  
 - VLESS  
-- TUIC v5  
 
 Selection is based on:
 
