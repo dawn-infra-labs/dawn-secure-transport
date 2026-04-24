@@ -1,47 +1,66 @@
 
-# Dawn-Secure-Transport (abbreviated as **Dawnset**)
+# ⚡ Dawn-Secure-Transport (abbreviated as **Dawnset**)
 
-**Modular, secure and privacy‑preserving transport and routing core implemented in Rust.**
+**A modular, security‑focused, privacy‑preserving, and resilient transport and routing core implemented in Rust.**
 
-**Dawnset** provides a reusable foundation for building next‑generation secure communication systems and resilient transport infrastructures.  
-It is designed as a modular, extensible, and high‑performance Rust workspace, offering:
+**It is not a VPN or a product by itself —  
+it is infrastructure for the next generation of secure and privacy‑preserving communication systems.**
 
-- A unified transport abstraction  
-- A suite of amalgamated and extended transport protocols  
-- Decentralized node discovery  
-- Intelligent routing for challenging connectivity environments (restricted, unstable, filtered, or unreliable networks)  
+Dawnset provides a reusable foundation for next‑generation secure communication systems.  
+It is built around a clean architectural separation:
 
-All components are released under the AGPLv3 license to maximize transparency, ecosystem contribution, and long‑term sustainability.
+1. **Rust Unified Transport Layer (RUTL)** — the first core  
+2. **Amalgamated Protocols (ruxvv, ruxsv, ruxpv)** — the second core  
+3. **Source Protocols** — internal building blocks  
+4. **Decentralized node discovery**  
+5. **AI‑driven routing engine**
 
----  
+All components are released under the AGPLv3 license to maximize transparency and ecosystem sustainability.
 
-# ✨ Key Capabilities
+---
 
-- Modular Rust workspace with cleanly separated crates  
-- Rux Protocol Suite (**ruxvv, ruxsv, ruxpv**)  
-- **Rust Unified Transport Layer (RUTL):** central orchestrator for all protocols, see `docs/protocols/RUTL.md`  
-- Zero‑cost abstractions enabling low memory overhead and high queries‑per‑second (QPS) performance under heavy concurrency  
-- Traffic concealment and adaptive transport resilience  
-- Decentralized node discovery (DHT + DNS TXT)  
-- AI‑driven routing engine with multi‑hop support  
-- Secure handshake and key‑management primitives  
-- Designed for integration into VPNs, proxies, and decentralized communication systems  
+# 🧩 1. Rust Unified Transport Layer (RUTL)
 
----  
+**RUTL is the architectural foundation of Dawnset.**  
+It defines the unified abstraction that all transport protocols must implement.
 
-# 🚀 Rux Protocol Suite
+RUTL provides:
 
-The Rux Protocol Suite is **dawnset**’s primary contribution:  
-a set of Rust‑based transport protocols built through amalgamation and protocol‑level extension.  
-These protocols are designed as cohesive, full‑featured transports — not simple stacks of components, but carefully integrated designs that balance performance, concealment, and resilience.
+- Unified connection lifecycle  
+- Shared error and capability model  
+- Consistent configuration interface  
+- Extensible transport pipeline  
+- Common handshake and routing boundaries  
+- Integration point for AI‑driven routing and multi‑path concurrency  
 
-For detailed specifications, protocol diagrams, and behavioral notes, see the documentation in the `docs/` directory.
+RUTL is the **first core** of Dawnset.  
+It is the layer that makes the entire transport subsystem coherent.
 
----  
+Full specification:  
+**`architecture/rutl.md`**
 
-## Source Protocols
+---
 
-**Dawnset** incorporates several source protocols as foundational building blocks:
+# 🚀 2. Amalgamated Protocols (Second Core)
+
+Dawnset implements three **Amalgamated Protocols**, each produced through the amalgamation of multiple source protocols into a cohesive transport design.
+
+### **Ruxvv — Performance‑oriented Amalgamated Protocol**
+Optimized for high‑efficiency routing across complex paths.
+
+### **Ruxsv — Stealth‑oriented Amalgamated Protocol**
+Optimized for concealment under restrictive connectivity conditions.
+
+### **Ruxpv — Survival‑oriented Amalgamated Protocol**
+Optimized for resilience in unreliable networks through packet‑based modulation.
+
+These protocols are the **second core** of Dawnset and operate under RUTL.
+
+---
+
+# 🔧 3. Source Protocols (Internal Components)
+
+Dawnset uses the following source protocols as internal building blocks:
 
 - REALITY  
 - uTLS  
@@ -49,111 +68,60 @@ For detailed specifications, protocol diagrams, and behavioral notes, see the do
 - XHTTP  
 - VLESS  
 
-These protocols provide the raw mechanisms required for constructing higher‑level designs.  
-The project does not alter their semantics or implementation.
+These are not exposed directly to the routing engine.  
+They are used exclusively during the **amalgamation process** to construct the Amalgamated Protocols.
 
----  
+---
 
-## Amalgamated Protocols
+# 🏗 4. Architecture Overview
 
-### **Ruxvv (Performance‑oriented)**  
-- Amalgamates: REALITY + uTLS + XTLS‑Vision + VLESS  
-- Optimized for **high‑efficiency routing** across complex network paths  
+Dawnset is organized into major subsystems:
 
-### **Ruxsv (Stealth‑oriented)**  
-- Amalgamates: REALITY + uTLS + XHTTP (Stream) + VLESS  
-- Optimized for **deep concealment** under restrictive connectivity conditions  
+### A. Rust Unified Transport Layer (RUTL)
+The unified abstraction for all transport protocols.
 
-### **Ruxpv (Survival‑oriented)**  
-- Amalgamates: REALITY + uTLS + XHTTP (Packet) + VLESS  
-- Optimized for **resilience in unreliable networks** by fragmenting traffic into discrete HTTP packets and eliminating long‑connection signatures
+### B. Transport Layer: Amalgamated Protocols
+Implements ruxvv, ruxsv, ruxpv using source protocol components.
 
----  
+### C. Decentralized Node Discovery
+DHT + DNS TXT fallback with node verification and scoring.
 
-# 🏗 **Rust Unified Transport Layer (RUTL)**
+### D. AI‑Driven Routing Engine
+Adaptive, multi‑hop, risk‑aware routing for challenging connectivity environments  
+(restricted, unstable, filtered, or unreliable networks).
 
-All protocols in the Rux Protocol Suite operate under the **Rust Unified Transport Layer (RUTL)** —  
-a shared abstraction that provides:
+Detailed architecture documents:  
+**`architecture/`**
 
-- Unified connection lifecycle  
-- Shared error handling  
-- Consistent configuration model  
-- Automatic TCP/UDP switching (where supported)  
-- Extensible transport pipeline  
-- Common handshake and routing interfaces  
+---
 
-**RUTL** is the architectural foundation and central orchestrator that enables the suite to function as a coherent system.  
-It provides AI‑driven routing, multi‑path concurrency, and protocol management.  
-For detailed design notes and engineering considerations, see `docs/protocols/RUTL.md`.
+# 📦 5. Crates Workspace
 
----  
+The Rust workspace is located in `crates/`:
 
-# 🧩 Architecture Overview
+- `core/` — RUTL, runtime, shared types  
+- `crypto/` — handshake primitives, key management  
+- `discovery/` — DHT + DNS TXT  
+- `transports/` — Amalgamated Protocols + source protocol components  
 
-**Dawnset** is organized into three major modules:
+Workspace overview:  
+**`crates/README.md`**
 
----  
+---
 
-## A. Decentralized Node Discovery (DHT + DNS TXT)
-
-Implements a resilient node distribution system using a structured DHT and DNS TXT records.  
-This decentralized mechanism prevents single‑point failures and ensures that directory servers cannot be easily blocked, strengthening resistance against network restrictions.
-
-Capabilities include:
-
-- Multi‑source node discovery  
-- Remote configuration and policy delivery  
-- Node prioritization and scoring  
-- Dynamic updates under adverse network conditions  
-
----  
-
-## B. Transport Layer: Rux Protocol Suite
-
-The transport subsystem includes:
-
-- **Ruxvv**  
-- **Ruxsv**  
-- **Ruxpv**  
-- **RUTL unified abstraction layer (see `docs/protocols/RUTL.md` for details)**  
-
----  
-
-## C. AI‑Driven Routing Engine
-
-Optimizes path selection based on:
-
-- Success rate  
-- Latency  
-- Load  
-- Risk factors in restricted or unstable networks  
-- Historical performance  
-
-Supports:
-
-- Multi‑hop routing  
-- Per‑application routing  
-- Adaptive fallback  
-- Risk‑aware path selection  
-
-The “AI‑driven” routing engine is implemented through lightweight heuristic algorithms and reinforcement learning models, ensuring practical deployment even on low‑power devices.  
-Detailed architecture documents are available in the `architecture/` directory.
-
----  
-
-# 📁 Repository Structure
+# 📁 6. Repository Structure
 
 ```
 dawnset/
 │
-├── .github/         — GitHub workflows, CI configuration, and repository automation
-├── architecture/    — High‑level system architecture, data‑flow diagrams, and threat models
-├── crates/          — Rust crates implementing transports, routing, discovery, and shared utilities
-├── docs/            — Protocol specifications, RUTL documentation, and detailed technical notes
-├── examples/        — Minimal runnable examples demonstrating integration and usage
-├── modules/         — Core subsystems (transport, discovery, routing) organized as modular components
-├── roadmap/         — Milestones, development phases, and long‑term planning documents
-├── scripts/         — Development scripts, tooling, and automation helpers
+├── .github/         — CI, issue templates, PR templates
+├── architecture/    — RUTL, system architecture, data‑flow, threat models
+├── crates/          — Rust workspace (core, crypto, discovery, transports)
+├── docs/            — Additional technical notes and protocol references
+├── examples/        — Integration examples
+├── modules/         — Core subsystems wiring and higher‑level composition
+├── roadmap/         — Milestones and long‑term planning
+├── scripts/         — Development tooling and automation
 ├── tests/           — Integration tests and validation suites
 │
 ├── .gitattributes
@@ -163,80 +131,67 @@ dawnset/
 └── README.md
 ```
 
----  
+---
 
-# 🔒 Security & Threat Model
+# 🔒 7. Security & Threat Model
 
-**Dawnset** is designed for adverse environments involving:
+Dawnset is designed for environments involving:
 
-- IP blocking  
+- Traffic classification  
 - Protocol fingerprinting  
-- Active probing  
-- Traffic analysis  
 - Selective throttling  
 - Metadata inspection  
+- Unreliable or filtered networks  
 
 The architecture emphasizes:
 
-- Protocol agility  
-- Transport concealment  
-- Decentralized discovery  
-- Multi‑hop routing  
+- Transport agility  
 - Minimal metadata exposure  
-
-A full threat model is documented in `architecture/threat-model.md`.
-
----  
-
-# 🚀 Roadmap
-
-### Phase 1 — Core Architecture (MVP)  
-- Modular workspace  
-- Transport stubs  
-- Basic DHT discovery  
-- Secure primitives  
-
-### Phase 2 — Distributed Node Network  
-- Multi‑source discovery  
-- Remote policy delivery  
-- Automatic node updates  
-
-### Phase 3 — AI Routing Engine  
 - Multi‑hop routing  
+- Decentralized discovery  
+- Adaptive modulation  
+
+Threat model:  
+**`architecture/threat-model.md`**
+
+---
+
+# 🚀 8. Roadmap
+
+### Phase 1 — Core Architecture (v0.2)
+- RUTL abstraction  
+- Transport stubs  
+- Basic discovery  
+- Crypto primitives  
+
+### Phase 2 — Distributed Node Network (v0.3)
+- Multi‑source discovery  
+- Node scoring  
+- Remote policy delivery  
+
+### Phase 3 — AI Routing Engine (v0.4)
+- Multi‑hop routing  
+- Adaptive fallback  
 - Risk‑aware path selection  
-- Per‑application routing  
 
-### Phase 4 — Future Extensions  
-- Post‑quantum cryptography (PQC) integration  
-- Additional resilient transport protocols  
+### Phase 4 — Future Extensions (v1.0)
+- PQC integration  
+- Additional Amalgamated Protocols  
 
-Full details are in the `roadmap/` directory.
-
----  
-
-# 🔮 Future Extensions
-
-The architecture is designed with modular cryptographic interfaces, allowing PQC algorithms to be added in future phases without breaking compatibility.
-
-Similarly, the transport framework is intentionally pluggable, enabling additional secure transport protocols to be integrated as they emerge.
-
-These extensions will be added in future development cycles under the same AGPLv3 license.
-
----  
+---
 
 # 📜 License
 
-This project is licensed under AGPLv3.  
-All modules developed in this repository will remain open and reusable for the secure communication ecosystem.
+AGPLv3 — ensuring openness and long‑term sustainability.
 
----  
+---
 
 # 🤝 Contributing
 
 Contributions are welcome.  
 A `CONTRIBUTING.md` file will be added in a future update.
 
----  
+---
 
 # 🌐 Why This Matters
 
@@ -248,10 +203,5 @@ Modern network control systems increasingly rely on:
 - Traffic classification  
 - Protocol‑level heuristics  
 
-**Dawnset** provides a flexible, modular, and future‑proof foundation for building tools that can adapt to evolving connectivity challenges.  
-Its crate structure allows developers to integrate individual components — such as cryptographic primitives or discovery modules — without adopting the entire framework, ensuring interoperability across diverse projects.
-
-It is not a VPN or a product by itself —  
-it is infrastructure for the next generation of secure and privacy‑preserving communication systems.
-
----  
+Dawnset provides a flexible, modular, and future‑proof foundation for building systems that can adapt to evolving connectivity challenges.  
+Its crate structure allows developers to integrate individual components — such as cryptographic primitives or discovery modules — without adopting the entire framework.
