@@ -1,4 +1,4 @@
-◆ # Dawnset — Protocol Architecture Overview
+# Dawnset — Protocol Architecture Overview
 
 This document provides a high‑level overview of the protocol architecture used in **Dawnset**.  
 It first introduces the **Rust Unified Transport Layer (RUTL)** as the first core,  
