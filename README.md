@@ -6,6 +6,9 @@
 > **Note:** Dawnset is *not* a VPN or a product.  
 > It is infrastructure for the next generation of secure and privacy‑preserving communication systems.
 
+> **Positioning:** This project is *not* a VPN or a product.  
+> It is infrastructure for secure and privacy‑preserving communication systems.
+
 Dawnset provides a reusable foundation for next‑generation secure communication systems.  
 It is built around a clean architectural separation:
 
