@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 license = "AGPL-3.0"
 authors = ["Dawn Infra Labs"]
-description = "Core runtime, session context, and shared interfaces for dawnset."
+description = "Core runtime, session context, and shared interfaces for Dawnset."
 
 [dependencies]
 serde = { workspace = true }
