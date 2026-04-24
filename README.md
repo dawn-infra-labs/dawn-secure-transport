@@ -6,7 +6,7 @@
 > **Positioning**: **Dawnset** is ***not*** a VPN or a product.  
 > **Dawnset** is infrastructure for the next generation of secure and privacy‑preserving communication systems.
 
-Dawnset provides a reusable foundation for next‑generation secure communication systems.  
+**Dawnset** provides a reusable foundation for next‑generation secure communication systems.  
 It is built around a clean architectural separation:
 
 1. **Rust Unified Transport Layer (RUTL)** — the first core  
