@@ -3,10 +3,10 @@
 
 **A modular, security‑focused, privacy‑preserving, and resilient transport and routing core implemented in Rust.**
 
----
+`
 It is not a VPN or a product by itself —  
 it is infrastructure for the next generation of secure and privacy‑preserving communication systems.
----
+`
 
 Dawnset provides a reusable foundation for next‑generation secure communication systems.  
 It is built around a clean architectural separation:
