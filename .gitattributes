@@ -1,17 +1,43 @@
+# -----------------------------------------
+# Dawnset Enhanced .gitattributes
+# Ensures consistent line endings, correct
+# linguist classification, and clean diffs.
+# -----------------------------------------
+
 # Normalize line endings for all text files
 * text=auto eol=lf
 
-# Treat Rust files as text
-*.rs text
+# Rust source files
+*.rs text eol=lf
 
-# Ensure Markdown files use LF
-*.md text eol=lf
+# Workspace configuration files
+*.toml text eol=lf
+*.lock linguist-generated=true
 
-# Ensure shell scripts use LF
+# Documentation formats
+*.md  text eol=lf
+*.txt text eol=lf
+*.rst text eol=lf
+
+# YAML / JSON configuration
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+
+# Shell scripts
 *.sh text eol=lf
 
 # Prevent GitHub from misclassifying vendored code
 vendor/** linguist-vendored=true
 
-# Exclude generated files from language statistics
-*.lock linguist-generated=true
+# Binary assets
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.svg  binary
+*.ico  binary
+*.wasm binary
+
+# Ignore generated build artifacts
+target/** linguist-generated=true
