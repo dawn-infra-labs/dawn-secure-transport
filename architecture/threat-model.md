@@ -3,7 +3,7 @@
 This document defines the adversarial model, attack surfaces, and defensive assumptions for **Dawnset**.  
 It provides a clear understanding of what threats the system is designed to withstand, what risks are mitigated, and what scenarios are explicitly out of scope.
 
-The threat model applies across all transports (`REALITY`, `uTLS`, `XTLS‑Vision`, `XHTTP`, `VLESS`, `TUIC v5`) and all routing layers.
+The threat model applies across all transports (`REALITY`, `uTLS`, `XTLS‑Vision`, `XHTTP`, `VLESS`) and all routing layers.
 
 ---
 
