@@ -5,14 +5,13 @@
 The transport layer of **Dawnset** provides protocol agility, resilient communication, and endpoint stealth.  
 It is designed around a unified abstraction that allows multiple transports to coexist, evolve, and be replaced without affecting higher‑level modules such as routing or discovery.
 
-This document describes the architecture, interfaces, behaviors, and design principles of the six supported transports:
+This document describes the architecture, interfaces, behaviors, and design principles of the five supported transports:
 
 - REALITY  
 - uTLS  
 - XTLS‑Vision  
 - XHTTP  
-- VLESS  
-- TUIC v5  
+- VLESS    
 
 and the future‑oriented PQC‑ready extensions.
 
@@ -195,29 +194,6 @@ A flexible, metadata‑minimal transport suitable for multi‑path relaying.
 
 **Weaknesses**  
 - Requires additional modulation layers for traffic analysis resistance  
-
----
-
-### 4.6 TUIC v5
-
-**Purpose**  
-A high‑performance QUIC‑based transport optimized for unstable or high‑latency networks.
-
-**Characteristics**  
-- Built on QUIC  
-- Congestion control optimized for connectivity constraints  
-- High throughput  
-- NAT‑friendly  
-- Resistant to packet loss and throttling  
-
-**Strengths**  
-- Fast  
-- Stable under poor network conditions  
-- Excellent for large data flows  
-
-**Weaknesses**  
-- QUIC fingerprinting must be mitigated  
-- Higher CPU usage  
 
 ---
 
