@@ -1,66 +1,70 @@
-# Crates Workspace Overview
+# Dawnset Crates Workspace Overview
 
 The `crates/` directory contains the Rust workspace for **Dawnset**.  
-It represents the implementation layer of the system, where each crate corresponds to a major subsystem defined in the architecture documentation.
+It represents the implementation layer of the system, where each crate
+corresponds to a major subsystem defined in the architecture documentation.
 
-This directory currently includes the initial workspace structure created during early planning.  
-The crates are placeholders and will be populated during the **v0.2 (Core Implementation)** phase of the roadmap.
+All crates are currently placeholders and will be populated during the  
+**v0.2 (Core Implementation)** phase of the roadmap.
 
 ---
 
-## 1. Current Workspace Structure
+## 1. Workspace Structure
 
-The existing crates reflect the modular architecture of Dawnset:
+The workspace reflects the modular architecture of Dawnset:
 
 ```text
 crates/
 │
 ├── core/
-│   └── (runtime, session context, shared types)
+│   └── (runtime, session context, shared types, RUTL interfaces)
 │
 ├── crypto/
-│   └── (handshake primitives, key management, PQC integration)
+│   └── (handshake primitives, key management, randomness)
 │
 ├── discovery/
 │   └── (DHT, DNS TXT fallback, node verification)
 │
 └── transports/
-    └── (REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS, TUIC v5)
+    └── (Amalgamated Protocols for RUTL + source protocol components)
 ```
 
-Each crate maps directly to a subsystem described in the architecture documents.
+Each crate maps directly to a subsystem described in the architecture.
 
 ---
 
 ## 2. Purpose of Each Crate
 
 ### `core/`
-Provides foundational runtime components:
+Provides foundational runtime components and the  
+**Rust Unified Transport Layer (RUTL)** abstraction:
 
 - session context  
 - shared data structures  
 - common utilities  
-- cross‑module interfaces  
+- RUTL traits and interfaces  
+- cross‑module integration  
 
-This crate acts as the integration layer between transports, discovery, and routing.
+This crate acts as the central coordination layer between transports,
+discovery, and routing.
 
 ---
 
 ### `crypto/`
-Implements all cryptographic operations:
+Implements cryptographic operations used across Dawnset:
 
 - handshake primitives  
 - key exchange  
 - encryption utilities  
-- PQC‑ready algorithms (future)  
 - secure randomness  
+- PQC‑ready extension points (future)  
 
-This crate ensures cryptographic consistency across all transports.
+This crate ensures cryptographic consistency across all transport protocols.
 
 ---
 
 ### `discovery/`
-Implements decentralized node discovery:
+Implements decentralized node discovery mechanisms:
 
 - DNS TXT fallback  
 - DHT‑based peer discovery  
@@ -68,39 +72,38 @@ Implements decentralized node discovery:
 - integrity checks  
 - local caching  
 
-This crate integrates directly with the AI Routing Engine for node prioritization.
+This crate integrates with the routing subsystem for node prioritization.
 
 ---
 
 ### `transports/`
-Implements all supported transport protocols:
+Implements the transport layer for Dawnset, including:
 
-- REALITY  
-- uTLS  
-- XTLS‑Vision  
-- XHTTP  
-- VLESS  
-- TUIC v5  
+- **Amalgamated Protocols** (ruxvv, ruxsv, ruxpv)  
+- internal **source protocol components**  
+  (REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS)
 
-Each protocol will be implemented as a submodule within this crate, unified by the Transport Framework.
+These protocols are used by the **Rust Unified Transport Layer (RUTL)**  
+to provide a unified interface to the routing engine.
 
 ---
 
 ## 3. Development Phases
 
-The crates will be populated in alignment with the roadmap:
+The workspace will be populated according to the roadmap:
 
 ### Phase 1 — v0.2 (Core Implementation)
 - initialize workspace Cargo.toml  
 - implement core runtime  
 - implement crypto primitives  
 - implement DNS TXT + DHT discovery  
-- implement unified transport abstraction  
+- implement RUTL abstraction  
+- add Amalgamated Protocol placeholders  
 
-### Phase 2 — v0.3 (Multi‑Transport & Multi‑Hop)
-- implement multiple transport protocols  
-- integrate node prioritization  
-- implement multi‑hop routing logic  
+### Phase 2 — v0.3 (Transport & Routing Integration)
+- implement Amalgamated Protocol logic  
+- integrate RUTL with routing  
+- implement multi‑hop routing  
 
 ### Phase 3 — v0.4 (Advanced Resilience)
 - adaptive modulation layers  
@@ -116,7 +119,7 @@ The crates will be populated in alignment with the roadmap:
 
 ## 4. Current Status
 
-The crates are intentionally empty at this stage.  
+All crates are intentionally empty at this stage.  
 This is by design:
 
 - architecture first  
@@ -124,7 +127,7 @@ This is by design:
 - implementation later  
 - clean separation of phases  
 
-This approach ensures the codebase remains stable, modular, and aligned with the system design.
+This ensures the codebase remains stable, modular, and aligned with the system design.
 
 ---
 
@@ -136,4 +139,4 @@ When implementation begins:
 - all crates will follow Rust best practices  
 - modules will remain fully decoupled  
 - testing will be integrated at the crate level  
-- workspace will support reproducible builds.
+- workspace will support reproducible builds
