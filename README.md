@@ -36,6 +36,13 @@ RUTL provides:
 RUTL is the **first core** of Dawnset.  
 It is the layer that makes the entire transport subsystem coherent.
 
+⬟ ### RUTL is not a closed system
+
+Although Dawnset ships with its own Amalgamated Protocols,  
+RUTL is designed to support any transport protocol that provides a complete structure  
+(handshake, encryption, session lifecycle, error semantics, framing).  
+Such protocols can be implemented as RUTL‑compatible transports without modifying the core.
+
 Full specification:  
 **`architecture/rutl.md`**
 
