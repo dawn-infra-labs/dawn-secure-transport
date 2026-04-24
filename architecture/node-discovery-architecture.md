@@ -95,7 +95,7 @@ DNS TXT records provide a lightweight, globally accessible fallback channel.
 ### Example TXT Payload
 
 ```
-node1.example.com 443 xtls-vision tuic-v5
+node1.example.com 443 xtls-vision 
 node2.example.net 443 reality utls
 ```
 
