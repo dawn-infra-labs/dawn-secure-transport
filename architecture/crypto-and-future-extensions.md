@@ -17,7 +17,7 @@ The goal is to ensure that **dawnset** remains secure, adaptable, and future‑p
    The system is designed to adopt PQC algorithms without redesigning the transport layer.
 
 3. **Modular Cryptographic Layers**  
-   Each transport protocol (`REALITY`, `uTLS`, `XTLS‑Vision`, `XHTTP`, `VLESS`, `TUIC v5`) defines its own crypto envelope, but all follow a unified abstraction.
+   Each transport protocol (`REALITY`, `uTLS`, `XTLS‑Vision`, `XHTTP`, `VLESS`, ) defines its own crypto envelope, but all follow a unified abstraction.
 
 4. **Graceful Upgrade Path**  
    New algorithms can be introduced without breaking compatibility with older clients.
@@ -92,9 +92,6 @@ Uses hybrid KEX + AEAD (`ChaCha20‑Poly1305` or `AES‑GCM`).
 
 ### 3.5 VLESS  
 Lightweight handshake with optional PQC upgrade.
-
-### 3.6 TUIC v5  
-QUIC‑based crypto with PQC‑ready handshake.
 
 ---
 
