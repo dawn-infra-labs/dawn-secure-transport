@@ -112,9 +112,9 @@ Capabilities include:
 
 The transport subsystem includes:
 
-- **ruxvv**  
-- **ruxsv**  
-- **ruxpv**  
+- **Ruxvv**  
+- **Ruxsv**  
+- **Ruxpv**  
 - **RUTL unified abstraction layer (see `docs/protocols/RUTL.md` for details)**  
 
 ---  
