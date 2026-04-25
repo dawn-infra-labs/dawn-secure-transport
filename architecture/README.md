@@ -29,7 +29,7 @@ Defines the unified transport abstraction, capability model, handshake boundarie
 error semantics, and extensibility points for integrating new transports.
 
 ### **amalgamated-protocols.md**
-Architecture of the **Amalgamated Protocols** (ruxvv, ruxsv, ruxpv).  
+Architecture of the **Amalgamated Protocols (ruxvv, ruxsv, ruxpv)**.  
 Explains how multiple source protocols are combined into cohesive transport designs
 optimized for performance, stealth, or survival.
 
