@@ -26,7 +26,7 @@ We follow responsible disclosure practices:
 
 This policy applies to:
 
-- dawnset (all crates)
+- **Dawnset** (all crates)
 - Documentation and specifications that impact security
 - Build scripts and CI workflows
 
