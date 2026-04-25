@@ -1,198 +1,185 @@
-# AI Routing Architecture
 
-The AI Routing Engine leverages multi-factor heuristic weighting and lightweight reinforcement learning to provide adaptive, and privacy‑preserving path selection within **dawnset**.  
-It evaluates network conditions, application behavior, and transport performance to determine the optimal routing strategy for each connection in **challenging connectivity environments (restricted, unstable, filtered, or unreliable networks)**.
+# AI‑Driven Routing Engine (Heuristic + Lightweight RL Architecture)
 
-This module integrates tightly with the transport framework and node discovery system, forming the decision‑making layer of the entire architecture.
+The **AI‑Driven Routing Engine** in Dawnset is not a generic “AI system”.  
+It is a **concrete algorithmic decision engine** built from:
 
----
+- **multi‑factor heuristic weighting**,  
+- **lightweight reinforcement learning models**, and  
+- **bandit‑style exploration–exploitation strategies**.
 
-## Background
+All routing decisions are computed **locally**, using deterministic capability
+evaluation combined with adaptive scoring models.  
+No external inference, cloud‑based AI, or opaque model behavior is involved.
 
-Modern connectivity challenges include dynamic blocking strategies such as:
-
-- protocol fingerprinting  
-- active probing  
-- selective throttling  
-- application‑level traffic classification  
-- behavioral analysis  
-
-Static routing strategies cannot remain reliable in such environments.  
-A resilient communication system must adapt continuously, learning from failures and adjusting routing decisions in real time.
-
-The Intelligent Routing Engine provides this adaptability.
+This engine integrates with RUTL, the Amalgamated Protocols, and decentralized
+node discovery to provide stable routing in **challenging connectivity environments
+(restricted, unstable, filtered, or unreliable networks)**.
 
 ---
 
-## Goals
+## 1. Purpose and Role
 
-The routing engine is designed to:
+The routing engine provides:
 
-- maximize connection success rate  
-- minimize detection risk  
-- optimize latency and throughput  
-- dynamically select the best transport protocol  
-- support multi‑hop routing for high‑risk scenarios  
-- automatically determine which applications require proxying  
-- apply probabilistic decision models (such as Multi-Armed Bandit) to learn from historical performance and optimize the exploration-exploitation balance over time  
+- Deterministic capability evaluation  
+- Heuristic scoring of transports and nodes  
+- Lightweight RL‑based adaptation to historical outcomes  
+- Multi‑hop path selection  
+- Environment‑aware fallback strategies  
 
----
-
-## Architecture Overview
-
-The Intelligent Routing Engine consists of four major components:
-
-### 1. Application Classifier
-Identifies the originating application or traffic type using:
-
-- package name (mobile)  
-- process metadata (desktop)  
-- DNS queries  
-- TLS/SNI fingerprints  
-- traffic behavior patterns  
-
-This enables **per‑application routing decisions**.
+It is a **mathematically grounded decision system**, not a general‑purpose AI.
 
 ---
 
-### 2. Risk Assessment Engine
-Assigns a risk score to each connection based on:
+## 2. Algorithmic Foundations
 
-- application sensitivity  
-- destination domain/IP  
-- connectivity history  
-- protocol detectability  
-- regional filtering patterns  
-- user‑defined policies  
+The routing engine is built on three algorithmic pillars:
 
-This engine utilizes a heuristic scoring algorithm that processes real-time network telemetry.  
-It calculates a dynamic risk coefficient by weighing factors such as protocol-specific entropy and handshake success rates.
+### 2.1 Multi‑Factor Heuristic Weighting
+
+A deterministic scoring function evaluates:
+
+- transport capabilities  
+- node reliability  
+- latency and throughput  
+- environmental variability  
+- session establishment history  
+
+Each factor is weighted using a tunable heuristic model.
+
+---
+
+### 2.2 Lightweight Reinforcement Learning
+
+A compact RL agent updates routing preferences based on:
+
+- success/failure outcomes  
+- session quality  
+- degradation events  
+- environmental transitions  
+
+This model is intentionally lightweight:
+
+- no deep learning  
+- no large models  
+- no external inference  
+- no privacy‑sensitive data  
+
+It is optimized for on‑device decision making.
+
+---
+
+### 2.3 Bandit‑Style Exploration–Exploitation
+
+A multi‑armed bandit strategy balances:
+
+- exploring new nodes/transports  
+- exploiting historically successful ones  
+
+This prevents the engine from repeating failed strategies while avoiding overfitting.
+
+---
+
+## 3. Core Components
+
+### 3.1 Application Classifier
+
+Uses deterministic rules and traffic‑pattern heuristics to categorize traffic.
+
+---
+
+### 3.2 Risk Assessment Engine
+
+Computes a **risk coefficient** using:
+
+- heuristic scoring  
+- RL‑adjusted weights  
+- environmental metadata  
 
 Risk scores influence:
 
-- whether to proxy  
-- whether to use multi‑hop  
-- which transport protocol to select  
+- whether multi‑hop routing is required  
+- which Amalgamated Protocol to select  
+- whether fallback strategies should be applied  
 
 ---
 
-### 3. Transport Selector
-Chooses the optimal transport protocol from:
+### 3.3 Transport Selector
 
-- REALITY  
-- uTLS  
-- XTLS‑Vision  
-- XHTTP  
-- VLESS  
+Selects among:
 
-Selection is based on:
+- **ruxvv** (Performance)  
+- **ruxsv** (Stealth)  
+- **ruxpv** (Survival)  
 
-- connectivity risk  
-- bandwidth requirements  
-- latency sensitivity  
-- historical success rate  
-- probing resistance  
+using capability evaluation + heuristic scoring + RL adjustments.
 
 ---
 
-### 4. Path Optimizer
-Determines:
+### 3.4 Path Optimizer
 
-- single‑hop vs multi‑hop  
-- node selection  
-- fallback strategies  
-- retry logic  
-- load balancing  
+Uses:
 
-It integrates with the node discovery system to obtain fresh node lists and performance metrics.
+- bandit exploration  
+- heuristic fallback  
+- RL‑adjusted node scoring  
 
----
-
-## Per‑Application Routing
-
-The Intelligent Routing Engine automatically determines **which applications should use the proxy and which should not**.
-
-### Why this is necessary
-- Sensitive apps (e.g., messaging platforms) must always use proxy  
-- Local apps (e.g., banking, payments) must never use proxy  
-- Some apps require dynamic decisions based on server location  
-- Reduces unnecessary load on the proxy network  
-- Minimizes detection risk  
-
-### How it works
-The engine evaluates:
-
-- app identity  
-- traffic patterns  
-- destination domain  
-- risk score  
-- historical success rate  
-- user preferences  
-
-### Decision outcomes
-- **Force Proxy**  
-- **Force Direct**  
-- **Dynamic (heuristic/reinforcement model decides per connection)**  
-- **Protocol‑specific routing**  
-- **Multi‑hop enforcement for high‑risk apps**  
-
-This capability is essential for both performance and resilience.
+to choose single‑hop or multi‑hop paths and to select concrete nodes from the
+discovery subsystem.
 
 ---
 
-## Data Flow
+## 4. Data Flow
 
-    Application
-       ↓
-    Application Classifier
-       ↓
-    Risk Assessment Engine
-       ↓
-    Transport Selector
-       ↓
-    Path Optimizer
-       ↓
-    Transport Framework
-       ↓
-    Network
-
-Each layer contributes to the final routing decision.
-
----
-
-## Security Considerations
-
-- No application metadata is transmitted externally  
-- Risk scoring is local and privacy‑preserving  
-- Routing decisions minimize exposure of sensitive traffic  
-- Multi‑hop routing reduces correlation risk  
-- Transport selection avoids detectable patterns  
-- Adaptive learning avoids repeating failed strategies  
+```text
+Application
+    ↓
+Heuristic Application Classifier
+    ↓
+Risk Assessment (Heuristic + RL)
+    ↓
+Transport Selector (Capability + Heuristic + RL)
+    ↓
+Path Optimizer (Bandit + Heuristic + RL)
+    ↓
+RUTL + Amalgamated Protocols
+    ↓
+Network
+```
 
 ---
 
-## Extensibility
+## 5. Security Considerations
 
-The Intelligent Routing Engine is designed to support:
+- All models run locally  
+- No external inference or remote control plane  
+- No application metadata leaves the device  
+- RL models use only aggregated success/failure signals  
+- Routing boundaries are enforced by RUTL and the security design  
+- Heuristic and RL behavior is constrained by deterministic capability checks  
 
-- new transport protocols  
-- new risk models  
-- new application classifiers  
-- region‑specific routing policies  
-- user‑defined overrides  
+---
+
+## 6. Extensibility
+
+The engine supports:
+
+- new heuristic factors  
+- new RL reward functions  
+- new capability categories  
+- region‑specific scoring rules  
 - plugin‑based routing strategies  
 
-The architecture ensures future growth without breaking compatibility.
+The algorithmic core remains stable while allowing controlled evolution.
 
 ---
 
-## Future Work
+## 7. Summary
 
-Planned enhancements include:
+The routing engine is **not a generic AI system**.  
+It is a **deterministic, heuristic‑driven, RL‑enhanced routing framework** designed
+for stability, adaptability, and long‑term maintainability.
 
-- integration with PQC‑ready transports  
-- On-device reinforcement learning: Integrating lightweight agents for real-time edge decision-making without cloud dependency  
-- collaborative (privacy‑preserving) performance sharing  
-- advanced anomaly detection  
-- per‑domain routing policies  
-- predictive connectivity modeling
+It forms the decision layer that unifies RUTL, the Amalgamated Protocols, and
+decentralized discovery into a coherent routing architecture.
