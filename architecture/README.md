@@ -22,39 +22,38 @@ All documents in this directory describe **architecture**, not implementation de
 
 ## 1. Architectural Map
 
-```
-                 ┌──────────────────────────────┐
-                 │        Security Design        │
-                 │      security-design.md       │
-                 └──────────────────────────────┘
-                               ▲
-                               │
-                               │
-┌──────────────────────────────┐        ┌──────────────────────────────┐
-│      Node Discovery          │        │      Routing Engine          │
-│     node-discovery.md        │◀──────▶│       ai-routing.md          │
-└──────────────────────────────┘        └──────────────────────────────┘
-           ▲                                      ▲
-           │                                      │
-           │                                      │
-┌──────────────────────────────┐        ┌──────────────────────────────┐
-│   RUTL (Unified Transport)   │◀──────▶│   Protocol Integration       │
-│           rutl.md            │        │  protocol-integration.md     │
-└──────────────────────────────┘        └──────────────────────────────┘
-           ▲
-           │
-           │
-┌──────────────────────────────┐
-│   Amalgamated Protocols      │
-│  amalgamated-protocol.md     │
-└──────────────────────────────┘
-           ▲
-           │
-           │
-┌──────────────────────────────┐
-│       Source Protocols       │
-│     source-protocols.md      │
-└──────────────────────────────┘
+```mermaid
+flowchart TB
+
+    subgraph Base["Base Layer"]
+        SP[Source Protocols<br/>source-protocols.md]
+    end
+
+    subgraph Construction["Transport Construction"]
+        AP[Amalgamated Protocols<br/>amalgamated-protocol.md]
+    end
+
+    subgraph Transport["Unified Transport Layer"]
+        RUTL[RUTL<br/>rutl.md]
+        PI[Protocol Integration<br/>protocol-integration.md]
+    end
+
+    subgraph Runtime["Runtime Decision Layer"]
+        RT[Routing Engine<br/>ai-routing.md]
+        ND[Node Discovery<br/>node-discovery.md]
+    end
+
+    subgraph Security["System Security"]
+        SEC[Security Design<br/>security-design.md]
+    end
+
+    SP --> AP
+    AP --> RUTL
+    RUTL --> PI
+    PI --> RT
+    PI --> ND
+    RT --> SEC
+    ND --> SEC
 ```
 
 ---
