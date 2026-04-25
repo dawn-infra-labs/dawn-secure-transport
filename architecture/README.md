@@ -25,28 +25,34 @@ All documents in this directory describe **architecture**, not implementation de
 ```mermaid
 flowchart TB
 
+    %% Base Layer
     subgraph Base["Base Layer"]
         SP[Source Protocols<br/>source-protocols.md]
     end
 
-    subgraph Construction["Transport Construction"]
+    %% Amalgamated Protocols
+    subgraph Amalgamation["Transport Construction"]
         AP[Amalgamated Protocols<br/>amalgamated-protocol.md]
     end
 
-    subgraph Transport["Unified Transport Layer"]
-        RUTL[RUTL<br/>rutl.md]
+    %% RUTL as the Core Layer
+    subgraph RUTL_LAYER["Rust Unified Transport Layer (RUTL)"]
+        RUTL[RUTL Core<br/>rutl.md]
         PI[Protocol Integration<br/>protocol-integration.md]
     end
 
+    %% Runtime Layer
     subgraph Runtime["Runtime Decision Layer"]
         RT[Routing Engine<br/>ai-routing.md]
         ND[Node Discovery<br/>node-discovery.md]
     end
 
+    %% Security Layer
     subgraph Security["System Security"]
         SEC[Security Design<br/>security-design.md]
     end
 
+    %% Connections
     SP --> AP
     AP --> RUTL
     RUTL --> PI
