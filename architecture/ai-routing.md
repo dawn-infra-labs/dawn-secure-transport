@@ -1,6 +1,5 @@
 
-# AI‑Driven Routing Engine   
-(Heuristic + Lightweight RL Architecture)
+# AI‑Driven Routing Engine (Heuristic + Lightweight RL Architecture)
 
 The **AI‑Driven Routing Engine** in Dawnset is not a generic “AI system”.  
 It is a **concrete algorithmic decision engine** built from:
