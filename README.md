@@ -160,8 +160,8 @@ The architecture emphasizes:
 - Decentralized discovery  
 - Adaptive modulation  
 
-Threat model:  
-**`architecture/threat-model.md`**
+Security design:
+**`architecture/security-design.md`**  
 
 ---
 
