@@ -1,8 +1,9 @@
+
 # Dawnset Crates Workspace Overview
 
 The `crates/` directory contains the Rust workspace for **Dawnset**.  
-It represents the implementation layer of the system, where each crate
-corresponds to a major subsystem defined in the architecture documentation.
+It represents the implementation layer of the system, where each crate corresponds
+to a major subsystem defined in the architecture documentation.
 
 All crates are currently placeholders and will be populated during the  
 **v0.2 (Core Implementation)** phase of the roadmap.
@@ -11,22 +12,22 @@ All crates are currently placeholders and will be populated during the
 
 ## 1. Workspace Structure
 
-The workspace reflects the modular architecture of Dawnset:
+The workspace mirrors the modular architecture of Dawnset:
 
 ```text
 crates/
 │
 ├── core/
-│   └── (runtime, session context, shared types, RUTL interfaces)
+│   └── (runtime, session context, shared types, RUTL traits)
 │
 ├── crypto/
-│   └── (handshake primitives, key management, randomness)
+│   └── (handshake primitives, key exchange, randomness)
 │
 ├── discovery/
-│   └── (DHT, DNS TXT fallback, node verification)
+│   └── (DHT, DNS TXT fallback, metadata validation)
 │
 └── transports/
-    └── (Amalgamated Protocols for RUTL + source protocol components)
+    └── (Amalgamated Protocols + source protocol components)
 ```
 
 Each crate maps directly to a subsystem described in the architecture.
@@ -42,8 +43,8 @@ Provides foundational runtime components and the
 - session context  
 - shared data structures  
 - common utilities  
-- RUTL traits and interfaces  
-- cross‑module integration  
+- RUTL traits and capability interfaces  
+- cross‑module integration points  
 
 This crate acts as the central coordination layer between transports,
 discovery, and routing.
@@ -54,10 +55,10 @@ discovery, and routing.
 Implements cryptographic operations used across Dawnset:
 
 - handshake primitives  
-- key exchange  
+- hybrid key exchange  
 - encryption utilities  
 - secure randomness  
-- PQC‑ready extension points (future)  
+- PQC‑ready extension points  
 
 This crate ensures cryptographic consistency across all transport protocols.
 
@@ -68,11 +69,11 @@ Implements decentralized node discovery mechanisms:
 
 - DNS TXT fallback  
 - DHT‑based peer discovery  
-- node verification  
+- metadata validation  
 - integrity checks  
 - local caching  
 
-This crate integrates with the routing subsystem for node prioritization.
+This crate integrates with routing for node prioritization and scoring.
 
 ---
 
@@ -83,14 +84,24 @@ Implements the transport layer for Dawnset, including:
 - internal **source protocol components**  
   (REALITY, uTLS, XTLS‑Vision, XHTTP, VLESS)
 
-These protocols are used by the **Rust Unified Transport Layer (RUTL)**  
+These protocols are consumed by the **Rust Unified Transport Layer (RUTL)**  
 to provide a unified interface to the routing engine.
 
 ---
 
 ## 3. Development Phases
 
-The workspace will be populated according to the roadmap:
+The workspace follows Dawnset’s architecture‑first roadmap:
+
+### Phase 0 — v0.1 (Architecture Foundation)
+- no Rust implementation  
+- complete architectural documentation  
+- finalize RUTL model  
+- finalize Amalgamated Protocols  
+- finalize routing & discovery models  
+- finalize security model  
+- prepare crate boundaries for v0.2
+- **Status: [COMPLETED]**  
 
 ### Phase 1 — v0.2 (Core Implementation)
 - initialize workspace Cargo.toml  
@@ -136,7 +147,7 @@ This ensures the codebase remains stable, modular, and aligned with the system d
 When implementation begins:
 
 - each crate will receive its own README  
-- all crates will follow Rust best practices  
 - modules will remain fully decoupled  
 - testing will be integrated at the crate level  
-- workspace will support reproducible builds
+- workspace will support reproducible builds  
+- all crates will follow Rust best practices
