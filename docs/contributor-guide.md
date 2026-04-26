@@ -1,9 +1,13 @@
 # Contributor Guide
 
-This document provides guidelines for contributors who wish to participate in the development of Dawn Bridge Core.  
-It outlines the development workflow, coding conventions, repository structure, and review process to ensure consistency and maintainability.
+This document provides guidelines for contributors participating in the
+development of Dawnset.  
+It outlines the development workflow, coding conventions, repository structure,
+and review expectations to ensure consistency, clarity, and long‑term
+maintainability.
 
-The goal is to create a clean, predictable, and professional environment for collaboration.
+The goal is to maintain a clean, predictable, and professional engineering
+environment.
 
 ---
 
@@ -15,18 +19,19 @@ The goal is to create a clean, predictable, and professional environment for col
 - branches should follow the naming pattern:
 
 ```text
-feature/<module>-<short-description>
+feature/<crate>-<short-description>
 ```
 
 ### Commit Guidelines
 - commits must be atomic  
-- commit messages must be descriptive  
+- commit messages must be descriptive and scoped  
 - avoid mixing unrelated changes  
 
 ### Pull Requests
 - each PR must address a single topic  
 - PR descriptions must include context and rationale  
 - reviewers may request changes before merging  
+- PRs must pass automated checks  
 
 ---
 
@@ -35,11 +40,10 @@ feature/<module>-<short-description>
 The repository is organized into clearly defined directories:
 
 ```text
-architecture/      → system design documents
-modules/           → module-level specifications
-roadmap/           → development milestones
-docs/              → supplementary documentation
+architecture/      → internal system design and abstractions
+docs/              → public-facing documentation
 crates/            → Rust workspace (implementation)
+.github/           → contribution workflows, templates, and policies
 ```
 
 Each directory has a specific purpose and should not be mixed with others.
@@ -63,7 +67,7 @@ Each directory has a specific purpose and should not be mixed with others.
 
 ### Safety
 - unsafe code must be avoided unless absolutely necessary  
-- any unsafe block must include justification  
+- any unsafe block must include justification and documentation  
 
 ---
 
@@ -71,8 +75,9 @@ Each directory has a specific purpose and should not be mixed with others.
 
 ### Test Types
 - unit tests for individual components  
-- integration tests for module interactions  
-- simulation tests for censorship scenarios  
+- integration tests for crate interactions  
+- simulation tests for **challenging connectivity environments
+  (restricted, unstable, filtered, or unreliable networks)**  
 
 ### Requirements
 - all new features must include tests  
@@ -106,6 +111,7 @@ Each directory has a specific purpose and should not be mixed with others.
 ### Reviews
 - security‑sensitive code requires additional review  
 - cryptographic changes require explicit approval  
+- changes affecting routing or transport behavior must be reviewed carefully  
 
 ---
 
@@ -116,6 +122,7 @@ Each directory has a specific purpose and should not be mixed with others.
 - follow the established directory structure  
 - write clear commit messages  
 - maintain consistency with existing code  
+- ensure tests and documentation are updated  
 
 ### Don’t
 - introduce new dependencies without discussion  
@@ -140,6 +147,7 @@ Each directory has a specific purpose and should not be mixed with others.
 - security  
 - performance  
 - consistency with architecture  
+- maintainability  
 
 ---
 
@@ -148,17 +156,17 @@ Each directory has a specific purpose and should not be mixed with others.
 ### Requirements
 - Rust toolchain (stable)  
 - familiarity with async Rust  
-- understanding of censorship‑resistant systems  
+- understanding of **connectivity constraints and traffic classification models**  
 
 ### Recommended Reading
 - architecture documents  
-- module specifications  
+- protocol documentation  
 - security considerations  
 - research notes  
 
 ---
 
-## 10. Contact & Collaboration
+## 10. Collaboration
 
 Contributors may collaborate through:
 - issues  
@@ -166,4 +174,5 @@ Contributors may collaborate through:
 - discussions  
 - architecture proposals  
 
-All contributions should follow the project’s professional and security‑focused standards.
+All contributions should follow the project’s professional, transparent, and
+long‑term‑oriented engineering standards.
