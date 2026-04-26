@@ -8,7 +8,7 @@
 
 ## Architectural Perspective
 
-Dawnset adopts a top‑down architectural perspective:  
+**Dawnset** adopts a top‑down architectural perspective:  
 **the system is defined first by its abstract principles, then by its engineered structures, and only afterward by the materials used to implement them.**
 
 This perspective ensures that Dawnset’s form is determined by its top‑level design rather than by the constraints of existing protocols.  
@@ -28,7 +28,7 @@ This perspective enables Dawnset to avoid design inertia, escape material‑driv
 For a full explanation of Dawnset’s architectural philosophy, see  
 **`docs/design-decisions.md`**.
 
-**Dawnset** provides a reusable foundation for next‑generation secure communication systems.  
+## **Dawnset** provides a reusable foundation for next‑generation secure communication systems.  
 It is built around a clean architectural separation:
 
 1. **Rust Unified Transport Layer (RUTL)** — the first core  
