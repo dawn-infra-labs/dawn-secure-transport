@@ -1,11 +1,7 @@
-//! Core runtime for Dawnset.
+//! Dawnset Core Runtime (placeholder).
 //!
-//! This crate provides the foundational components shared across
-//! transports, discovery, routing, and session management.
+//! This crate defines the foundational runtime and abstraction layer for
+//! the Rust Unified Transport Layer (RUTL). Full implementation will be
+//! introduced in v0.2.
 
-pub fn init_core() {
-    // Initialize global runtime state
-    // (logging, metrics, allocators, feature flags, etc.)
-    //
-    // Actual initialization logic will be implemented in v0.2.
-}
+pub mod rutl;
