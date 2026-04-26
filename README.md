@@ -28,7 +28,7 @@ This perspective enables Dawnset to avoid design inertia, escape material‑driv
 For a full explanation of Dawnset’s architectural philosophy, see  
 **`docs/design-decisions.md`**.
 
-## Dawnset: Foundation for Next‑Generation Secure Communication  
+## Dawnset: Core Infrastructure for Next‑Generation Secure Communication  
 
 It is built around a clean architectural separation:
 
