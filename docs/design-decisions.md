@@ -10,7 +10,45 @@ behind the final choice.
 
 ---
 
-## 1. Architecture First, Implementation Later
+## 1. Architectural Order: From Abstract Principles to Concrete Materials
+
+Dawnset follows a top‑down architectural order:  
+**first define abstract principles, then define engineered structures, and only
+after that select concrete materials.**
+
+This order reflects a core philosophy:  
+**the system’s form must be determined by its top‑level design, not by the
+limitations of existing protocols.**
+
+### 1. Abstract Layer — RUTL  
+The system first defines unified transport semantics, boundaries, state models,
+and replaceability principles.  
+This layer determines *what transport is*, independent of any specific protocol.
+
+### 2. Engineered Layer — Amalgamated Protocols  
+Once the abstract semantics are defined, Dawnset specifies engineered protocol
+families that embody those semantics.  
+These protocols represent structure, not materials.
+
+### 3. Material Layer — Source Protocols  
+Only after the abstract and engineered layers are established does the system
+select concrete protocols as implementation materials.  
+Materials serve the structure, not the other way around.
+
+### Why This Order Matters  
+This architectural order enables Dawnset to:
+
+- avoid being constrained by existing protocol behavior  
+- escape inertia and conventional design patterns  
+- preserve long‑term innovation space  
+- ensure future replaceability and extensibility  
+- maintain clarity between semantics, structure, and materials  
+
+This top‑down approach is central to Dawnset’s identity and long‑term evolution.
+
+---
+
+## 2. Architecture First, Implementation Later
 
 ### Decision
 The project follows an **architecture‑first, implementation‑second** approach.
@@ -34,7 +72,7 @@ Documentation‑first ensures long‑term maintainability and reduces technical 
 
 ---
 
-## 2. Modular System Architecture
+## 3. Modular System Architecture
 
 ### Decision
 Dawnset is structured into four core architectural layers, in the following
@@ -48,7 +86,7 @@ order:
 ### Motivation
 - establish RUTL as the foundational abstraction for all transports  
 - treat Amalgamated Protocols as engineered, first‑class transports built on RUTL  
-- ensure routing and discovery operate on stable, unified transport semantics  
+- ensure routing and discovery operate on unified transport semantics  
 - allow each layer to evolve independently without cross‑layer coupling  
 
 ### Alternatives Considered
@@ -58,12 +96,12 @@ order:
 
 ### Rationale
 This ordering reflects Dawnset’s architectural philosophy:  
-**first unify transport semantics (RUTL), then define engineered transports
+**first define abstract semantics (RUTL), then define engineered transports
 (Amalgamated Protocols), then build discovery and routing on top.**
 
 ---
 
-## 3. Multi‑Transport Strategy
+## 4. Multi‑Transport Strategy
 
 ### Decision
 Support multiple complementary transport protocols:
@@ -85,27 +123,7 @@ A multi‑transport approach maximizes robustness.
 
 ---
 
-## 4. Unified Transport Framework (RUTL)
-
-### Decision
-All transports share a unified abstraction layer.
-
-### Motivation
-- reduce duplicated logic  
-- simplify protocol integration  
-- enable routing‑informed transport orchestration  
-- improve maintainability  
-
-### Alternatives Considered
-- independent protocol implementations  
-- protocol‑specific routing logic  
-
-### Rationale
-A unified framework ensures consistency and reduces complexity.
-
----
-
-## 5. Amalgamated Protocols as First‑Class Transports
+## 5. Amalgamated Protocols as Engineered Transports
 
 ### Decision
 Dawnset defines three **Amalgamated Protocols**—ruxvv, ruxsv, ruxpv—as cohesive,
@@ -131,7 +149,27 @@ implementation details or handshake mechanisms.
 
 ---
 
-## 6. Decentralized Node Discovery
+## 6. Unified Transport Framework (RUTL)
+
+### Decision
+All transports share a unified abstraction layer.
+
+### Motivation
+- reduce duplicated logic  
+- simplify protocol integration  
+- enable routing‑informed transport orchestration  
+- improve maintainability  
+
+### Alternatives Considered
+- independent protocol implementations  
+- protocol‑specific routing logic  
+
+### Rationale
+A unified framework ensures consistency and reduces complexity.
+
+---
+
+## 7. Decentralized Node Discovery
 
 ### Decision
 Use DHT as the primary discovery mechanism, with DNS TXT as fallback.
@@ -150,7 +188,7 @@ Decentralization improves resilience and long‑term sustainability.
 
 ---
 
-## 7. AI‑Driven Routing Engine
+## 8. AI‑Driven Routing Engine
 
 ### Decision
 Routing decisions use a combination of:
@@ -174,7 +212,7 @@ remaining transparent and auditable.
 
 ---
 
-## 8. Multi‑Hop Routing Support
+## 9. Multi‑Hop Routing Support
 
 ### Decision
 Support multi‑hop routing for path diversity and resilience.
@@ -194,7 +232,7 @@ overhead of full onion routing.
 
 ---
 
-## 9. PQC‑Ready Cryptography
+## 10. PQC‑Ready Cryptography
 
 ### Decision
 Design the crypto layer to support post‑quantum algorithms in the future.
@@ -212,7 +250,7 @@ Quantum‑resistant design ensures longevity and trustworthiness.
 
 ---
 
-## 10. Lightweight Reinforcement Learning (Future Option)
+## 11. Lightweight Reinforcement Learning (Future Option)
 
 ### Decision
 Lightweight RL may be used to refine routing decisions over time.
@@ -231,7 +269,7 @@ RL provides long‑term adaptability while remaining optional and transparent.
 
 ---
 
-## 11. Rust as the Implementation Language
+## 12. Rust as the Implementation Language
 
 ### Decision
 Rust is chosen for all core components.
