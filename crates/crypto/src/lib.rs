@@ -1,11 +1,6 @@
-//! Cryptographic subsystem for Dawnset.
+//! Dawnset Cryptography Layer (placeholder).
 //!
-//! This crate provides the foundational cryptographic primitives used across
-//! transports, discovery, routing, and session management. It includes
-//! key exchange, handshake utilities, and future PQC‑ready components.
+//! This crate will provide handshake primitives, hybrid key exchange,
+//! encryption utilities, and secure randomness in v0.2.
 
-pub fn init_crypto() {
-    // Initialize cryptographic providers, RNG sources, and feature flags.
-    //
-    // Actual initialization logic will be implemented in v0.2.
-}
+pub mod primitives;
