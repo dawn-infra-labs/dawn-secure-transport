@@ -28,7 +28,8 @@ This perspective enables Dawnset to avoid design inertia, escape material‑driv
 For a full explanation of Dawnset’s architectural philosophy, see  
 **`docs/design-decisions.md`**.
 
-## **Dawnset** provides a reusable foundation for next‑generation secure communication systems.  
+## Dawnset: Foundation for Next‑Generation Secure Communication  
+
 It is built around a clean architectural separation:
 
 1. **Rust Unified Transport Layer (RUTL)** — the first core  
@@ -44,7 +45,8 @@ All components are released under the AGPLv3 license to maximize transparency an
 # 🧩 1. Rust Unified Transport Layer (RUTL)
 
 **RUTL is the architectural foundation of Dawnset.**  
-It defines the unified abstraction that all transport protocols must implement.
+It defines the unified abstraction that all transport protocols must 
+implement.
 
 RUTL provides:
 
