@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 license = "AGPL-3.0"
 authors = ["Dawn Infra Labs"]
-description = "Cryptographic primitives, key exchange, and PQC-ready components for Dawnset."
+description = "Cryptographic primitives and handshake foundations for Dawnset (placeholder for v0.2)."
 
 [dependencies]
-ring = "0.17"
+serde = { workspace = true }
