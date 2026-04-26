@@ -29,7 +29,7 @@ For a full explanation of Dawnset’s architectural philosophy, see
 **`docs/design-decisions.md`**.
 
 ## **Dawnset: Core Infrastructure**  
-**for Next‑Generation Secure Communication**  
+**For Next‑Generation Secure Communication**  
 
 It is built around a clean architectural separation:
 
