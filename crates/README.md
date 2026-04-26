@@ -100,8 +100,9 @@ The workspace follows Dawnset’s architecture‑first roadmap:
 - finalize Amalgamated Protocols  
 - finalize routing & discovery models  
 - finalize security model  
-- prepare crate boundaries for v0.2
-- **Status: [COMPLETED]**  
+- prepare crate boundaries for v0.2  
+
+**Status: [COMPLETED]**  
 
 ### Phase 1 — v0.2 (Core Implementation)
 - initialize workspace Cargo.toml  
