@@ -6,7 +6,7 @@
 > **Positioning**: **Dawnset** is ***not*** a VPN or a product.  
 > **Dawnset** is infrastructure for the next generation of secure and privacy‑preserving communication systems.
 
-✦ ## Architectural Perspective
+## Architectural Perspective
 
 Dawnset adopts a top‑down architectural perspective:  
 **the system is defined first by its abstract principles, then by its engineered structures, and only afterward by the materials used to implement them.**
