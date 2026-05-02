@@ -1,0 +1,10 @@
+[package]
+name = "dawnset-transports"
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0"
+authors = ["Dawn Infra Labs"]
+description = "Unified transport framework and protocol abstraction for Dawnset."
+
+[dependencies]
+serde = { workspace = true }

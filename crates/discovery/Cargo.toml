@@ -1,0 +1,10 @@
+[package]
+name = "dawnset-discovery"
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0"
+authors = ["Dawn Infra Labs"]
+description = "Decentralized node discovery and freshness tracking for Dawnset."
+
+[dependencies]
+serde = { workspace = true }
